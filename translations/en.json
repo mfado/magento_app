@@ -1,43 +1,19 @@
 {
-  "app": {
-    "parameters": {
-      "password": { "label": "Password" },
-      "username": { "label": "Username" },
-      "url":      { "label": "URL" }
-    },
+	"app": {
 
-    "description":  "Track time on tickets, with powerful reporting"
-  },
+		"description": "An awesome integration with Magento"
 
-  "exception": "An error occured: {{error}}",
+	},
 
-  "form": {
-    "add_duration":     "Add Duration",
-    "cancel_duration":  "Cancel Duration",
-    "client":           "Client",
-    "empty":            "{{field}} is empty!",
-    "no_projects":      "No projects found for your Harvest account!",
-    "hours":            "Hours",
-    "notes":            "Notes",
-    "notes_message":    "Zendesk #%@ \"%@\" %@",
-    "project":          "Project",
-    "start_timer":      "Start Timer",
-    "stop_timer":       "Stop Timer",
-    "success":          "Hours sucessfuly logged!",
-    "task":             "Task"
-  },
+	"recent_orders": {
 
-  "global": {
-    "back":       "Back",
-    "submit":     "Submit",
-    "submitting": "Submitting..."
-  },
+		"order_number": "ORDERS (#)",
+		"status": "STATUS"
 
-  "invalidResponse": "API response contains invalid data!",
+	},
 
-  "problem": "There's been a problem: {{error}}",
+	"telephone": "Telephone",
+	"customer_group": "Customer Group",
+	"customer_since": "Customer Since"
 
-  "timer_stopped": "Someone else stopped the timer!",
-
-  "view_timesheet": "View your Harvest timesheet..."
 }

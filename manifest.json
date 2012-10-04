@@ -6,24 +6,19 @@
 
   "location": "ticket_sidebar",
   "defaultLocale": "en",
-  "private": true,
+  "private": false,
+  "singleInstall": true,
   "frameworkVersion": "0.5",
 
   "parameters": [
     {
-      "name": "url",
+      "name": "Store url",
       "type": "url",
       "required": true
     },
 
     {
-      "name": "username",
-      "type": "text",
-      "required": true
-    },
-
-    {
-      "name": "password",
+      "name": "Secret key",
       "type": "password",
       "required": true
     }
