@@ -1,0 +1,25 @@
+<div>
+	<h4>Bindi Irwin (<a href="{{profile_uri}}">#{{id}}</a>)</h4>
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>{{t "recent_orders.order_number"}}</th>
+				<th>{{t "recent_orders.status"}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#recent_orders}}
+			<tr class="_tooltip" data-title="{{titles}}" data-placement="top">
+				<td><a href="{{order_uri}}">#{{order_id}}</td>
+				<td><span class="badge badge-{{status_code}}">{{status}}</a></td>
+			</tr>
+			{{/recent_orders}}
+		</tbody>
+	</table>
+	<h5>{{t "telephone"}}</h5>
+	<p>{{phone}}</p>
+	<h5>{{t "customer_group"}}</h5>
+	<p>{{group}}</p>
+	<h5>{{t "customer_since"}}</h5>
+	<p>{{member_since}}</p>
+</div>
