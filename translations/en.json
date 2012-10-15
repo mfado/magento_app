@@ -1,19 +1,28 @@
 {
 	"app": {
+		"description": "An awesome integration with Magento",
+		"parameters": {
+			"url"         : { "label": "Store URL" },
+			"access_token": { "label": "Access token" }
+    }
+	},
 
-		"description": "An awesome integration with Magento"
+	"profile": {
+		"error": "A customer profile couldn't be found for this ticket.",
+		"customer_since": "Customer Since"
+	},
 
+	"global": {
+		"error": {
+			"title"  : "An error occurred",
+			"message": "Please try the previous action again."
+		}
 	},
 
 	"recent_orders": {
-
+		"error"       : "",
 		"order_number": "ORDERS (#)",
-		"status": "STATUS"
-
-	},
-
-	"telephone": "Telephone",
-	"customer_group": "Customer Group",
-	"customer_since": "Customer Since"
+		"status"      : "STATUS"
+	}
 
 }

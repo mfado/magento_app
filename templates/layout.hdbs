@@ -1,4 +1,7 @@
 <div class="magento_app">
-  <h3>Magento</h3><hr/>
-  <div data-main></div>
+  <header>
+    <span class="logo"/>
+    <h3>Magento</h3>
+  </header>
+  <section data-main></section>
 </div>

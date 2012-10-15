@@ -1,5 +1,6 @@
 <div>
-	<h4>Bindi Irwin (<a href="{{profile_uri}}">#{{id}}</a>)</h4>
+	<h4><a href="#">{{name}}</a></h4>
+	{{#if recent_orders}}
 	<table class="table table-condensed">
 		<thead>
 			<tr>
@@ -10,16 +11,13 @@
 		<tbody>
 			{{#recent_orders}}
 			<tr class="_tooltip" data-title="{{titles}}" data-placement="top">
-				<td><a href="{{order_uri}}">#{{order_id}}</td>
+				<td><a href="{{order_uri}}">#{{id}}</td>
 				<td><span class="badge badge-{{status_code}}">{{status}}</a></td>
 			</tr>
 			{{/recent_orders}}
 		</tbody>
 	</table>
-	<h5>{{t "telephone"}}</h5>
-	<p>{{phone}}</p>
-	<h5>{{t "customer_group"}}</h5>
-	<p>{{group}}</p>
-	<h5>{{t "customer_since"}}</h5>
-	<p>{{member_since}}</p>
+	{{/if}}
+	<h5>{{t "profile.customer_since"}}</h5>
+	<p>{{customer_since}}</p>
 </div>
