@@ -6,6 +6,8 @@
 
 		defaultState: 'loading',
 
+		initialised: false,
+
 		profileData: {
 			name           : 'John Citizen',
 			recent_orders  : [],
@@ -13,33 +15,35 @@
 		},
 
 		resources: {
-			MAGENTO_PROFILE_URI : '%@/zendesk/api/customers/%@',
-			ORDER_URI           : '%@/zendesk/api/orders/%@'
+			PROFILE_URI       : '%@/zendesk/api/customers/%@',
+			RECENT_ORDERS_URI : '%@/zendesk/api/orders/%@',
+			ORDER_URI         : '%@/zendesk/api/orders/%@'
 		},
 
 		requests: {
-			'getProfile'      : function(email) { return this._getRequest(helpers.fmt(this.resources.MAGENTO_PROFILE_URI, this.settings.url, email)); },
-			'getRecentOrders' : function() { return this._getRequest(helpers.fmt(this.resources.MAGENTO_PROFILE_URI)); },
-			'getOrder'        : function(orderNumber) { return this._getRequest(helpers.fmt(this.resources.MAGENTO_PROFILE_URI, this.settings.url, orderNumber)); }
+			'getProfile'   : function(email) { return this._getRequest(helpers.fmt(this.resources.PROFILE_URI, this.settings.url, email)); },
+			'getAllOrders' : function() { return this._getRequest(helpers.fmt(this.resources.RECENT_ORDERS_URI)); },
+			'getOrder'     : function(orderNumber) { return this._getRequest(helpers.fmt(this.resources.ORDER_URI, this.settings.url, orderNumber)); }
 		},
 
 		events: {
-			'app.activated'        : 'handleAppActivated',
-			'getProfile.done'      : 'handleGetProfile',
-			'getRecentOrders.done' : 'handleGetRecentOrders',
-			'getOrder.done'        : 'handleGetOrder',
-			'getProfile.fail'      : 'handleFail',
-			'getOrder.fail'        : 'handleFail'
+			'app.activated'                  : 'dataChanged',
+			'ticket.subject.changed'         : 'dataChanged',
+			'ticket.requester.email.changed' : 'dataChanged',
+			'getProfile.done'                : 'handleGetProfile',
+			'getRecentOrders.done'           : 'handleGetRecentOrders',
+			'getOrder.done'                  : 'handleGetOrder',
+			'getProfile.fail'                : 'handleFail',
+			'getOrder.fail'                  : 'handleFail'
 		},
 
-		handleAppActivated: function() {
-			// App was activated.
-			var email;
-			try {
-				email = this.ticket().requester().email();
-			} catch (err) {
-				email = 'chris@chnorton.com.au';
-			}
+		dataChanged: function(data) {
+			var ticketSubject = this.ticket().subject();
+			if (_.isUndefined(ticketSubject)) { return; }
+			var requester = this.ticket().requester();
+			if (_.isUndefined(requester)) { return; }
+			var email = requester.email();
+			if (_.isUndefined(email)) { return; }
 			this.ajax('getProfile', email);
 		},
 
@@ -49,8 +53,6 @@
 				this.showError(this.I18n.t('global.error.title'), this.I18n.t('profile.error'));
 				return;
 			}
-			// console.log('Profile data ---');
-			console.log(data);
 			// We'll do a little transformation on the data and store locally.
 			this.profileData = data;
 			// Add customer since value
@@ -63,11 +65,6 @@
 		handleFail: function() {
 			// Show fail message
 			this.showError();
-		},
-
-		handleClickBackBtn: function(evt) {
-			this.switchTo('profile', this.profileData);
-			alert('blah');
 		},
 
 		_getRequest: function(resource) {
