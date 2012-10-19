@@ -126,6 +126,7 @@
 
 		toggleAddress: function (e) {
 			this.$(e.target).parent().next('p').toggleClass('hide');
+			return false;
 		},
 
 		// Look to see if we should show a specific order's details
