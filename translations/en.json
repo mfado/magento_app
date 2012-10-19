@@ -9,7 +9,11 @@
 
 	"profile": {
 		"error": "A customer profile couldn't be found for this ticket.",
-		"customer_since": "Customer Since"
+		"customer_since": "Customer Since",
+		"addresses": "Addresses",
+		"billing": "Billing",
+		"shipping": "Shipping",
+		"order": "Order"
 	},
 
 	"global": {
@@ -19,9 +23,9 @@
 		}
 	},
 
-	"recent_orders": {
+	"orders": {
 		"error"       : "",
-		"order_number": "ORDERS (#)",
+		"id": "ORDERS (#)",
 		"status"      : "STATUS"
 	}
 

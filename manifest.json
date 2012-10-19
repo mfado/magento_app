@@ -16,11 +16,15 @@
       "type": "url",
       "required": true
     },
-
     {
       "name": "access_token",
       "type": "password",
       "required": true
+    },
+    {
+      "name": "order_id_field_id",
+      "type": "number",
+      "required": false
     }
   ]
 }

@@ -1,24 +1,24 @@
 .magento_app {
 	table {
 		margin: 18px 0 9px;
-		.badge {
-			color: white;
-			font-size: 9px;
-			padding: 2px 9px;
-			text-transform: uppercase;
-			-webkit-border-radius: 4px;
-			-moz-border-radius: 4px;
-			border-radius: 4px;
-		}
-		.badge-pending {
-			background-color: #F89406;
-		}
-		.badge-shipped {
-			background-color: #468847;
-		}
-		.badge-cancelled {
-			background-color: #B94A48;
-		}
+	}
+	.badge {
+		color: white;
+		font-size: 9px;
+		padding: 2px 9px;
+		text-transform: uppercase;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+	}
+	.badge-pending {
+		background-color: #F89406;
+	}
+	.badge-shipped {
+		background-color: #468847;
+	}
+	.badge-cancelled {
+		background-color: #B94A48;
 	}
 	h5 {
 		margin-top: 9px;
