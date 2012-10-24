@@ -3,7 +3,8 @@
 		"description": "An awesome integration with Magento",
 		"parameters": {
 			"url"         : { "label": "Store URL" },
-			"access_token": { "label": "Access token" }
+			"access_token": { "label": "Access token" },
+			"order_id_field_id": { "label": "Order ID Field ID" }
     }
 	},
 
