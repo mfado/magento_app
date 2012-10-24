@@ -108,8 +108,7 @@
 		_getRequest: function(resource) {
 			return {
 				headers  : {
-					'Authorization': 'Token token="c426ef185fe729c0ad560cfc69f4486c"',
-					'X-Token': 'c426ef185fe729c0ad560cfc69f4486c'
+					'Authorization': 'Token token="'+this.settings.access_token+'"'
 				},
 				url      : resource,
 				method   : 'GET',
