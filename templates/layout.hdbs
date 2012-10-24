@@ -1,7 +1,5 @@
-<div class="magento_app">
-  <header>
-    <span class="logo"/>
-    <h3>Magento</h3>
-  </header>
-  <section data-main></section>
-</div>
+<header>
+  <span class="logo"/>
+  <h3>{{setting "title"}}</h3>
+</header>
+<section data-main></section>

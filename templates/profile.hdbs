@@ -3,7 +3,7 @@
 	<h4>
 		<a href="{{id}}">{{name}}</a>
 		{{#if guest}}
-		<span>(Guest)</span>
+		<span>{{t "orders.guest"}}</span>
 		{{/if}}
 	</h4>
 

@@ -151,11 +151,13 @@
 				customFieldName = 'custom_field_' + this.settings.order_id_field_id;
 				orderId = this.ticket().customField(customFieldName);
 
-				this.profileData.ticketOrder = _.find(this.profileData.orders, function(order){
-					return order.id = orderId;
-				});
+				if (orderId) {
+					this.profileData.ticketOrder = _.find(this.profileData.orders, function(order){
+						return order.id = orderId;
+					});
 
-				this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
+					this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
+				}
 
 			}
 		},
