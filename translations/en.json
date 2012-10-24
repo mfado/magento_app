@@ -25,8 +25,19 @@
 
 	"orders": {
 		"error"       : "",
-		"id": "ORDERS (#)",
+		"id"          : "RECENT ORDERS",
 		"status"      : "STATUS"
+	},
+
+	"order": {
+		"details"     : "Order details for",
+		"status"      : "Status",
+		"currency"    : "Currency",
+		"items"       : "Items",
+		"created"     : "Created",
+		"updated"     : "Updated",
+		"store"       : "Store",
+		"total"       : "Total"
 	}
 
 }

@@ -7,7 +7,7 @@
 		{{/if}}
 	</h4>
 
-	{{#if orders}}
+	{{#if recentOrders}}
 	<table class="table table-condensed">
 		<thead>
 			<tr>
@@ -16,12 +16,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			{{#orders}}
+			{{#recentOrders}}
 			<tr class="_tooltip" data-title="{{titles}}" data-placement="top">
 				<td><a href="#{{id}}">#{{id}}</td>
 				<td><span class="badge badge-{{status}}">{{status}}</a></td>
 			</tr>
-			{{/orders}}
+			{{/recentOrders}}
 		</tbody>
 	</table>
 	{{/if}}
@@ -42,9 +42,22 @@
 	{{#if ticketOrder}}
 	<hr>
 
-	<h4>{{t "profile.order"}} <a href="#">{{ticketOrder.id}}</a><h4>
-	<h5>{{t "orders.status"}}</h5>
+	<h4>{{t "order.details"}} <a target="_blank" href="{{settings.url}}/admin/sales_order/view/order_id/{{ticketOrder.id}}">{{ticketOrder.id}}</a><h4>
+
+	<h5>{{t "order.store"}}</h5>
+	<p>{{{ticketOrder.store}}}</p>
+
+	<h5>{{t "order.status"}}</h5>
 	<p><span class="badge badge-{{ticketOrder.status}}">{{ticketOrder.status}}</span></p>
+
+	<h5>{{t "order.currency"}}</h5>
+	<p>{{ticketOrder.currency}}</p>
+
+	<h5>{{t "order.total"}}</h5>
+	<p>{{ticketOrder.total}}</p>
+
+	<h5>{{t "order.created"}}</h5>
+	<p>{{ticketOrder.created}}</p>
 
 	{{/if}}
 

@@ -84,15 +84,28 @@
 		},
 
 		handleGetProfile: function(data) {
+			var ordersLength = 0,
+          i;
+
 			// Check that the response was successfuly
 			if (_.has(data, 'success') && data.success === false)
 			{
 				this.showError(this.I18n.t('global.error.title'), data.message);
 				return;
 			}
+
 			// We'll do a little transformation on the data and store locally.
 			this.profileData = data;
-			this._cleanupAddresses();
+			this.profileData.settings = this.settings;
+			this.profileData.addresses = this._cleanupLineBreaks(this.profileData.addresses);
+
+			// See if we should show all orders or only recent orders.
+			ordersLength = this.profileData.orders.length;
+			if ( ordersLength > 3 ) {
+				this.profileData.recentOrders = this.profileData.orders.slice(ordersLength-3, ordersLength).reverse();
+			} else {
+				this.profileData.recentOrders = this.profileData.orders.reverse();
+			}
 
 			this._orderToShow();
 
@@ -142,16 +155,18 @@
 					return order.id = orderId;
 				});
 
+				this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
+
 			}
 		},
 
 		// Format the line breaks for web
-		_cleanupAddresses: function() {
-			var addresses = this.profileData.addresses;
-			_.each(addresses, function(address, key) {
-				addresses[key] = address.replace(/\n/g, '<br>');
+		_cleanupLineBreaks: function(toBeCleaned) {
+			var cleaned = toBeCleaned;
+			_.each(cleaned, function(value, key) {
+				cleaned[key] = value.replace(/\n/g, '<br>');
 			});
-
+			return cleaned;
 		}
 
 
