@@ -21,7 +21,8 @@
 		"error": {
 			"title"  : "An error occurred",
 			"message": "Please try the previous action again."
-		}
+		},
+		"loading"  : "Loading customer data.."
 	},
 
 	"orders": {
