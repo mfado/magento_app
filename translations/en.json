@@ -1,29 +1,28 @@
 {
 	"app": {
-		"description": "An awesome integration with Magento",
+		"description": "Displays customer and order details from Magento.",
 		"parameters": {
-			"url"         : { "label": "Store URL" },
-			"access_token": { "label": "Access token" },
-			"order_id_field_id": { "label": "Order ID Field ID" }
+			"url"               : { "label": "Store URL" },
+			"access_token"      : { "label": "Access token" },
+			"order_id_field_id" : { "label": "Order ID Field ID" }
     }
 	},
 
 	"profile": {
-		"error": "A customer profile couldn't be found for this ticket.",
-		"customer_since": "Customer Since",
-		"addresses": "Addresses",
-		"billing": "Billing",
-		"shipping": "Shipping",
-		"order": "Order",
-    "guest": "(Guest)"
+		"customer_since" : "Customer Since",
+		"addresses"      : "Addresses",
+		"billing"        : "Billing",
+		"shipping"       : "Shipping",
+		"order"          : "Order",
+    "guest"          : "(Guest)"
 	},
 
 	"global": {
 		"error": {
-			"title"  : "An error occurred",
-			"message": "Please try the previous action again."
+			"title"     : "An error occurred",
+			"message"   : "Please try the previous action again."
 		},
-		"loading"  : "Loading customer data.."
+		"loading"     : "Loading customer data.."
 	},
 
 	"orders": {
