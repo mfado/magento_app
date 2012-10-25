@@ -1,7 +1,7 @@
 <div>
 
 	<h4>
-		<a href="{{id}}">{{name}}</a>
+		<a href="{{admin_url}}" target="_blank">{{name}}</a>
 		{{#if guest}}
 		<span>{{t "orders.guest"}}</span>
 		{{/if}}
@@ -18,7 +18,7 @@
 		<tbody>
 			{{#recentOrders}}
 			<tr class="_tooltip" data-title="{{titles}}" data-placement="top">
-				<td><a href="#{{id}}">#{{id}}</td>
+				<td><a href="{{admin_url}}" target="_blank">#{{id}}</td>
 				<td><span class="badge badge-{{status}}">{{status}}</a></td>
 			</tr>
 			{{/recentOrders}}
@@ -42,7 +42,7 @@
 	{{#if ticketOrder}}
 	<hr>
 
-	<h4>{{t "order.details"}} <a target="_blank" href="{{settings.url}}/admin/sales_order/view/order_id/{{ticketOrder.id}}">{{ticketOrder.id}}</a><h4>
+	<h4>{{t "order.details"}} <a target="_blank" href="{{ticketOrder.admin_url}}">{{ticketOrder.id}}</a><h4>
 
 	<h5>{{t "order.store"}}</h5>
 	<p>{{{ticketOrder.store}}}</p>

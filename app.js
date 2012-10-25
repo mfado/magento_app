@@ -8,45 +8,7 @@
 
 		initialised: false,
 
-		profileData: {
-			/*
-			"guest": false,
-			"id": "1",
-			"name": "Chris Norton",
-			"email": "chris@chnorton.com.au",
-			"active": true,
-			"created": "2012-08-24 00:40:31",
-			"dob": null,
-			"addresses": {
-				"billing": "Chris Norton Fontis Suite 2, Level 9 167-169 Queen St Melbourne, Victoria, 3000 Australia T: 0396021025 ",
-				"shipping": "Chris Norton Fontis Suite 2, Level 9 167-169 Queen St Melbourne, Victoria, 3000 Australia T: 0396021025 "
-			},
-			"orders": [
-				{
-					"id": "100000001",
-					"status": "pending",
-					"created": "2012-08-24 00:40:31",
-					"updated": "2012-08-24 00:40:32",
-					"customer": {
-					"name": "Chris Norton",
-					"email": "chris@chnorton.com.au",
-					"ip": "127.0.0.1",
-					"guest": false
-				},
-				"store": "Main Website Main Website Store Default Store View",
-				"total": "15.0000",
-				"currency": "AUD",
-				"items": [
-					{
-					"sku": "test",
-					"name": "Test Product"
-					}
-				]
-				}
-			],
-			"ticketOrder": {}
-			*/
-		},
+		profileData: {},
 
 		resources: {
 			PROFILE_URI       : '%@/zendesk/api/customers/%@',
