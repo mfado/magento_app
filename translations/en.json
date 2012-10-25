@@ -22,11 +22,10 @@
 			"title"     : "An error occurred",
 			"message"   : "Please try the previous action again."
 		},
-		"loading"     : "Loading customer data.."
+		"loading"     : "Loading customer data..."
 	},
 
 	"orders": {
-		"error"       : "",
 		"id"          : "RECENT ORDERS",
 		"status"      : "STATUS"
 	},
