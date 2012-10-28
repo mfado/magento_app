@@ -3,7 +3,7 @@
 	<h4>
 		<a href="{{admin_url}}" target="_blank">{{name}}</a>
 		{{#if guest}}
-		<span>{{t "orders.guest"}}</span>
+		<span>{{t "profile.guest"}}</span>
 		{{/if}}
 	</h4>
 
