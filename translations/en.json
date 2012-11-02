@@ -4,7 +4,7 @@
 		"parameters": {
 			"url"               : { "label": "Store URL" },
 			"access_token"      : { "label": "Access token" },
-			"order_id_field_id" : { "label": "Order ID Field ID" }
+			"order_id_field_id" : { "label": "Order Number Field ID" }
     }
 	},
 
