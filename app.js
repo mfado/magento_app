@@ -10,17 +10,19 @@
 
 		profileData: {},
 
+		magentoApiEndpoint: '',
+
 		resources: {
-			PROFILE_URI       : '%@/zendesk/api/customers/%@',
-			RECENT_ORDERS_URI : '%@/zendesk/api/orders/%@',
-			ORDER_URI         : '%@/zendesk/api/orders/%@',
+			PROFILE_URI       : '%@/index.php/zendesk/api/customers/%@',
+			RECENT_ORDERS_URI : '%@/index.php/zendesk/api/orders/%@',
+			ORDER_URI         : '%@/index.php/zendesk/api/orders/%@',
 			CUSTOMER_URI      : '%@'
 		},
 
 		requests: {
-			'getProfile'   : function(email) { return this._getRequest(helpers.fmt(this.resources.PROFILE_URI, this.settings.url, email)); },
+			'getProfile'   : function(email) { return this._getRequest(helpers.fmt(this.resources.PROFILE_URI, this.magentoApiEndpoint, email)); },
 			'getAllOrders' : function() { return this._getRequest(helpers.fmt(this.resources.RECENT_ORDERS_URI)); },
-			'getOrder'     : function(orderNumber) { return this._getRequest(helpers.fmt(this.resources.ORDER_URI, this.settings.url, orderNumber)); }
+			'getOrder'     : function(orderNumber) { return this._getRequest(helpers.fmt(this.resources.ORDER_URI, this.magentoApiEndpoint, orderNumber)); }
 		},
 
 		events: {
@@ -42,6 +44,7 @@
 			if (_.isUndefined(requester)) { return; }
 			var email = requester.email();
 			if (_.isUndefined(email)) { return; }
+			if (this.magentoApiEndpoint === '') { this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url); }
 			this.ajax('getProfile', email);
 		},
 
@@ -89,6 +92,19 @@
 				method   : 'GET',
 				dataType : 'json'
 			};
+		},
+
+		_checkMagentoApiEndpoint: function(url) {
+			// First, lets make sure there is no trailing slash, we'll add one later.
+			if (url.slice(-1) === '/') { url = url.slice(0, -1); }
+			// Test whether we have a front-controller reference here.
+			if (url.indexOf('index.php') === -1)
+			{
+				// Nothing to do, the front-controller isn't in the url, pass it back unaltered.
+				return url;
+			}
+			url = url.replace(/\/index.php/g, '');
+			return url;
 		},
 
 		showError: function(title, msg) {
