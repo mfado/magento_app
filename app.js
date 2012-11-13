@@ -95,13 +95,15 @@
 		},
 
 		_checkMagentoApiEndpoint: function(url) {
-			if (!url.indexOf('index.php/'))
+			// First, lets make sure there is no trailing slash, we'll add one later.
+			if (url.slice(-1) === '/') { url = url.slice(0, -1); }
+			// Test whether we have a front-controller reference here.
+			if (!url.test(/index.php\//))
 			{
 				// Nothing to do, the front-controller isn't in the url, pass it back unaltered.
 				return url;
 			}
 			url = url.replace(/index.php\//, '');
-			if (url.slice(-1) === '/') { url = url.slice(0, -1); }
 			return url;
 		},
 
