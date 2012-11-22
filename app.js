@@ -32,7 +32,7 @@
 			'click .toggle-address'          : 'toggleAddress'
 		},
 
-		//dataChanged: function(data) {
+		dataChanged: function(data) {
 			var ticketSubject = this.ticket().subject();
 			if (_.isUndefined(ticketSubject)) { return; }
 			var requester = this.ticket().requester();
