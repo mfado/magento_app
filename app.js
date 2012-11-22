@@ -20,9 +20,7 @@
 		},
 
 		requests: {
-			'getProfile'   : function(email) { return this._getRequest(helpers.fmt(this.resources.PROFILE_URI, this.magentoApiEndpoint, email)); },
-			'getAllOrders' : function() { return this._getRequest(helpers.fmt(this.resources.RECENT_ORDERS_URI)); },
-			'getOrder'     : function(orderNumber) { return this._getRequest(helpers.fmt(this.resources.ORDER_URI, this.magentoApiEndpoint, orderNumber)); }
+			'getProfile'   : function(email) { return this._getRequest(helpers.fmt(this.resources.PROFILE_URI, this.magentoApiEndpoint, email)); }
 		},
 
 		events: {
@@ -30,10 +28,7 @@
 			'ticket.subject.changed'         : 'dataChanged',
 			'ticket.requester.email.changed' : 'dataChanged',
 			'getProfile.done'                : 'handleGetProfile',
-			'getRecentOrders.done'           : 'handleGetRecentOrders',
-			'getOrder.done'                  : 'handleGetOrder',
 			'getProfile.fail'                : 'handleFail',
-			'getOrder.fail'                  : 'handleFail',
 			'click .toggle-address'          : 'toggleAddress'
 		},
 
