@@ -126,7 +126,9 @@
 						return (order.id === orderId);
 					});
 
-					this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
+					if (!_.isUndefined(this.profileData.ticketOrder)) {
+						this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
+					}
 				}
 
 			}
