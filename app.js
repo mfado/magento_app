@@ -13,10 +13,7 @@
 		magentoApiEndpoint: '',
 
 		resources: {
-			PROFILE_URI       : '%@/index.php/zendesk/api/customers/%@',
-			RECENT_ORDERS_URI : '%@/index.php/zendesk/api/orders/%@',
-			ORDER_URI         : '%@/index.php/zendesk/api/orders/%@',
-			CUSTOMER_URI      : '%@'
+			PROFILE_URI       : '%@/index.php/zendesk/api/customers/%@'
 		},
 
 		requests: {
