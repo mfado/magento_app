@@ -123,7 +123,7 @@
 
 				if (orderId) {
 					this.profileData.ticketOrder = _.find(this.profileData.orders, function(order){
-						return order.id = orderId;
+						return (order.id === orderId);
 					});
 
 					this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
