@@ -13,10 +13,7 @@
 		magentoApiEndpoint: '',
 
 		resources: {
-			PROFILE_URI       : '%@/index.php/zendesk/api/customers/%@',
-			RECENT_ORDERS_URI : '%@/index.php/zendesk/api/orders/%@',
-			ORDER_URI         : '%@/index.php/zendesk/api/orders/%@',
-			CUSTOMER_URI      : '%@'
+			PROFILE_URI       : '%@/index.php/zendesk/api/customers/%@'
 		},
 
 		requests: {
@@ -126,10 +123,12 @@
 
 				if (orderId) {
 					this.profileData.ticketOrder = _.find(this.profileData.orders, function(order){
-						return order.id = orderId;
+						return (order.id === orderId);
 					});
 
-					this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
+					if (!_.isUndefined(this.profileData.ticketOrder)) {
+						this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
+					}
 				}
 
 			}
