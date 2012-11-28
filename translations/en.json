@@ -22,7 +22,9 @@
 			"title"     : "An error occurred",
 			"message"   : "Please try the previous action again."
 		},
-		"loading"     : "Loading customer data..."
+		"loading"     : "Loading customer data...",
+		"waiting"     : "Waiting for ticket data to load...",
+		"requesting"  : "Requesting customer data from Magento..."
 	},
 
 	"orders": {

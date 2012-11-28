@@ -21,23 +21,48 @@
 		},
 
 		events: {
-			'app.activated'                  : 'dataChanged',
-			'ticket.subject.changed'         : 'dataChanged',
-			'ticket.requester.email.changed' : 'dataChanged',
+			'app.activated'                  : 'init',
+			'ticket.requester.email.changed' : 'queryMagento',
 			'getProfile.done'                : 'handleGetProfile',
 			'getProfile.fail'                : 'handleFail',
 			'click .toggle-address'          : 'toggleAddress'
 		},
 
+		requiredTicketProperties: [
+			'ticket.requester.email'
+		],
+
+		init: function(data){
+			if(!data.firstLoad){
+				return;
+			}
+
+			// We're ready to do layout & ask for data
+			this.switchTo('waiting');
+			var that = this;
+			_.delay(function(){
+				if(that.requiredTicketPropertiesReady()){
+					that.queryMagento();
+				}
+			}, 100);
+		},
+
+		requiredTicketPropertiesReady: function(){
+			// Loop through requiredTicketProperties and work out if they are ready
+			return true;
+		},
+
+		queryMagento: function(){
+			this.switchTo('requesting');
+			this.ajax('getProfile', this.ticket().requester().email());
+		},
+
 		dataChanged: function(data) {
-			var ticketSubject = this.ticket().subject();
-			if (_.isUndefined(ticketSubject)) { return; }
 			var requester = this.ticket().requester();
 			if (_.isUndefined(requester)) { return; }
 			var email = requester.email();
 			if (_.isUndefined(email)) { return; }
 			if (this.magentoApiEndpoint === '') { this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url); }
-			this.ajax('getProfile', email);
 		},
 
 		handleGetProfile: function(data) {
