@@ -52,6 +52,10 @@ parts:
       title: "Please try the previous action again"
       value: "Please try the previous action again."
   - translation:
+      key: "txt.apps.magento.app.global.error.data"
+      title: "An error occured while reading the ticket"
+      value: "Ticket data could not be read."
+  - translation:
       key: "txt.apps.magento.app.global.loading"
       title: "Details about the customer are loading"
       value: "Loading customer data..."
