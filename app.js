@@ -4,6 +4,10 @@
 
 	return {
 
+		currAttempt : 0,
+
+		MAX_ATTEMPTS : 20,
+
 		defaultState: 'loading',
 
 		initialised: false,
@@ -21,28 +25,84 @@
 		},
 
 		events: {
-			'app.activated'                  : 'dataChanged',
-			'ticket.subject.changed'         : 'dataChanged',
-			'ticket.requester.email.changed' : 'dataChanged',
+			'app.activated'                  : 'init',
+			'requiredProperties.ready'       : 'queryMagento',
 			'getProfile.done'                : 'handleGetProfile',
 			'getProfile.fail'                : 'handleFail',
 			'click .toggle-address'          : 'toggleAddress'
 		},
 
-		dataChanged: function(data) {
-			var ticketSubject = this.ticket().subject();
-			if (_.isUndefined(ticketSubject)) { return; }
-			var requester = this.ticket().requester();
-			if (_.isUndefined(requester)) { return; }
-			var email = requester.email();
-			if (_.isUndefined(email)) { return; }
-			if (this.magentoApiEndpoint === '') { this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url); }
-			this.ajax('getProfile', email);
+		requiredProperties : [
+			'ticket.requester.email'
+		],
+
+		init: function(data){
+			if(!data.firstLoad){
+				return;
+			}
+
+			this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url);
+
+			this.allRequiredPropertiesExist();
+		},
+
+		queryMagento: function(){
+			this.switchTo('requesting');
+			this.ajax('getProfile', this.ticket().requester().email());
+		},
+
+		allRequiredPropertiesExist: function() {
+			if (this.requiredProperties.length > 0) {
+				var valid = this.validateRequiredProperty(this.requiredProperties[0]);
+
+				// prop is valid, remove from array
+				if (valid) {
+					this.requiredProperties.shift();
+				}
+
+				if (this.requiredProperties.length > 0 && this.currAttempt < this.MAX_ATTEMPTS) {
+					if (!valid) {
+						++this.currAttempt;
+					}
+
+					_.delay(_.bind(this.allRequiredPropertiesExist, this), 100);
+					return;
+				}
+			}
+
+			if (this.currAttempt < this.MAX_ATTEMPTS) {
+				this.trigger('requiredProperties.ready');
+			} else {
+				this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.data'));
+			}
+		},
+
+		validateRequiredProperty: function(property) {
+			var parts = property.split('.');
+			var part = '', obj = this;
+
+			while (parts.length) {
+				part = parts.shift();
+				try {
+					obj = obj[part]();
+				} catch (e) {
+					return false;
+				}
+				// check if property is invalid
+				if (parts.length > 0 && !_.isObject(obj)) {
+					return false;
+				}
+				// check if value returned from property is invalid
+				if (parts.length === 0 && (_.isNull(obj) || _.isUndefined(obj) || obj === '' || obj === 'no')) {
+					return false;
+				}
+			}
+
+			return true;
 		},
 
 		handleGetProfile: function(data) {
-			var ordersLength = 0,
-          i;
+			var ordersLength = 0;
 
 			// Check that the response was successfuly
 			if (_.has(data, 'success') && data.success === false)
@@ -142,7 +202,6 @@
 			});
 			return cleaned;
 		}
-
 
 	};
 

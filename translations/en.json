@@ -20,9 +20,11 @@
 	"global": {
 		"error": {
 			"title"     : "An error occurred",
-			"message"   : "Please try the previous action again."
+			"message"   : "Please try the previous action again.",
+			"data"      : "Ticket data could not be read."
 		},
-		"loading"     : "Loading customer data..."
+		"loading"     : "Waiting for ticket data to load...",
+		"requesting"  : "Requesting customer data from Magento..."
 	},
 
 	"orders": {
