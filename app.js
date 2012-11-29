@@ -85,7 +85,7 @@
 			var part = '', obj = this;
 
 			while (parts.length) {
-				n = parts.shift();
+				part = parts.shift();
 				try {
 					obj = obj[part]();
 				} catch (e) {
