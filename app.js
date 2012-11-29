@@ -43,7 +43,7 @@
 
 			this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url);
 
-			this.allRequiredPropertiesExist(this);
+			this.allRequiredPropertiesExist();
 		},
 
 		queryMagento: function(){
@@ -51,29 +51,29 @@
 			this.ajax('getProfile', this.ticket().requester().email());
 		},
 
-		allRequiredPropertiesExist: function(app) {
-			if (app.requiredProperties.length > 0) {
-				var valid = app.validateRequiredProperty(app.requiredProperties[0]);
+		allRequiredPropertiesExist: function() {
+			if (this.requiredProperties.length > 0) {
+				var valid = this.validateRequiredProperty(this.requiredProperties[0]);
 
 				// prop is valid, remove from array
 				if (valid) {
-					app.requiredProperties.shift();
+					this.requiredProperties.shift();
 				}
 
-				if (app.requiredProperties.length > 0 && app.currAttempt < app.MAX_ATTEMPTS) {
+				if (this.requiredProperties.length > 0 && this.currAttempt < this.MAX_ATTEMPTS) {
 					if (!valid) {
-						++app.currAttempt;
+						++this.currAttempt;
 					}
 
-					_.delay(app.allRequiredPropertiesExist, 100, app);
+					_.delay(_.bind(this.allRequiredPropertiesExist, this), 100);
 					return;
 				}
 			}
 
-			if (app.currAttempt < app.MAX_ATTEMPTS) {
-				app.trigger('requiredProperties.ready');
+			if (this.currAttempt < this.MAX_ATTEMPTS) {
+				this.trigger('requiredProperties.ready');
 			} else {
-				app.showError(app.I18n.t('global.error.title'), app.I18n.t('global.error.data'));
+				this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.data'));
 			}
 		},
 
