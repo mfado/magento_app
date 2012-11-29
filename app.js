@@ -43,9 +43,6 @@
 
 			this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url);
 
-			// We're ready to do layout & ask for data
-			this.switchTo('waiting');
-
 			this.allRequiredPropertiesExist(this);
 		},
 
@@ -105,7 +102,7 @@
 		},
 
 		handleGetProfile: function(data) {
-			var ordersLength = 0, i;
+			var ordersLength = 0;
 
 			// Check that the response was successfuly
 			if (_.has(data, 'success') && data.success === false)
