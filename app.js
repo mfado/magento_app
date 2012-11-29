@@ -2,10 +2,11 @@
 
 	'use_strict';
 
-	var currAttempt = 0;
-	var MAX_ATTEMPTS = 20;
-
 	return {
+
+		currAttempt : 0,
+
+		MAX_ATTEMPTS : 20,
 
 		defaultState: 'loading',
 
@@ -62,9 +63,9 @@
 					app.requiredProperties.shift();
 				}
 
-				if (app.requiredProperties.length > 0 && currAttempt < MAX_ATTEMPTS) {
+				if (app.requiredProperties.length > 0 && app.currAttempt < app.MAX_ATTEMPTS) {
 					if (!valid) {
-						++currAttempt;
+						++app.currAttempt;
 					}
 
 					_.delay(app.allRequiredPropertiesExist, 100, app);
@@ -72,7 +73,7 @@
 				}
 			}
 
-			if (currAttempt < MAX_ATTEMPTS) {
+			if (app.currAttempt < app.MAX_ATTEMPTS) {
 				app.trigger('requiredProperties.ready');
 			} else {
 				app.showError(app.I18n.t('global.error.title'), app.I18n.t('global.error.data'));
@@ -81,21 +82,21 @@
 
 		validateRequiredProperty: function(property) {
 			var parts = property.split('.');
-			var n = '', o = this;
+			var part = '', obj = this;
 
 			while (parts.length) {
 				n = parts.shift();
 				try {
-					o = o[n]();
+					obj = obj[part]();
 				} catch (e) {
 					return false;
 				}
 				// check if property is invalid
-				if (parts.length > 0 && !_.isObject(o)) {
+				if (parts.length > 0 && !_.isObject(obj)) {
 					return false;
 				}
 				// check if value returned from property is invalid
-				if (parts.length === 0 && (_.isNull(o) || _.isUndefined(o) || o === '' || o === 'no')) {
+				if (parts.length === 0 && (_.isNull(obj) || _.isUndefined(obj) || obj === '' || obj === 'no')) {
 					return false;
 				}
 			}
