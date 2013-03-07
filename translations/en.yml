@@ -1,4 +1,7 @@
 title: "Magento App"
+packages:
+  - default
+  - magento
 
 parts:
 
