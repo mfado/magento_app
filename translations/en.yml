@@ -45,8 +45,8 @@ parts:
       value: "Guest"
   - translation:
       key: "txt.apps.magento.app.global.error.title"
-      title: "An error occured"
-      value: "An error occured"
+      title: "An error occurred"
+      value: "An error occurred"
   - translation:
       key: "txt.apps.magento.app.global.error.message"
       title: "Please try the previous action again"
