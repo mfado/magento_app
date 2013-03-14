@@ -87,7 +87,7 @@
     },
 
     validateRequiredProperty: function(propertyPath) {
-      var value = safeGetPath(propertyPath);
+      var value = this.safeGetPath(propertyPath);
       return value != null && value !== '' && value !== 'no';
     },
 
