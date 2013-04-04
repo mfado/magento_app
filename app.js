@@ -32,14 +32,14 @@
       'click .toggle-address'          : 'toggleAddress'
     },
 
-    requiredProperties : [
-      'ticket.requester.email'
-    ],
-
     init: function(data){
       if(!data.firstLoad){
         return;
       }
+
+      this.requiredProperties : [
+        'ticket.requester.email'
+      ],
 
       this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url);
 
