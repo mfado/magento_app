@@ -37,9 +37,9 @@
         return;
       }
 
-      this.requiredProperties : [
+      this.requiredProperties = [
         'ticket.requester.email'
-      ],
+      ];
 
       this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url);
 
