@@ -24,7 +24,7 @@
       "data"      : "Ticket data could not be read."
     },
     "loading"     : "Waiting for ticket data to load...",
-    "requesting"  : "Requesting customer data from Magento..."
+    "requesting"  : "Requesting data from Magento..."
   },
 
   "orders": {
@@ -40,7 +40,10 @@
     "created"     : "Created",
     "updated"     : "Updated",
     "store"       : "Store",
-    "total"       : "Total"
+    "total"       : "Total",
+    "error": {
+      "message"   :  "Order does not exist"
+    }
   }
 
 }

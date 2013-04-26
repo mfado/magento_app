@@ -64,8 +64,8 @@ parts:
       value: "Waiting for ticket data to load..."
   - translation:
       key: "txt.apps.magento.app.global.requesting"
-      title: "Customer data is being requested from Magento"
-      value: "Requesting customer data from Magento..."
+      title: "Data is being requested from Magento"
+      value: "Requesting data from Magento..."
   - translation:
       key: "txt.apps.magento.app.orders.id"
       title: "Recent orders the customer has completed"
@@ -106,3 +106,7 @@ parts:
       key: "txt.apps.magento.app.order.total"
       title: "The total amount of the order"
       value: "Total"
+  - translation:
+      key: "txt.apps.magento.app.order.error.message"
+      title: "Data is being requested from Magento"
+      value: "Order does not exist"
