@@ -4,7 +4,7 @@
 
   return {
 
-    // Contants
+    // Constants
     MAX_ATTEMPTS : 20,
 
     // Properties
