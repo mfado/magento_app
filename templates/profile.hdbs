@@ -41,24 +41,7 @@
 
   {{#if ticketOrder}}
   <hr>
-
-  <h4>{{t "order.details"}} <a target="_blank" href="{{ticketOrder.admin_url}}">{{ticketOrder.id}}</a><h4>
-
-  <h5>{{t "order.store"}}</h5>
-  <p>{{{ticketOrder.store}}}</p>
-
-  <h5>{{t "order.status"}}</h5>
-  <p><span class="badge badge-{{ticketOrder.status}}">{{ticketOrder.status}}</span></p>
-
-  <h5>{{t "order.currency"}}</h5>
-  <p>{{ticketOrder.currency}}</p>
-
-  <h5>{{t "order.total"}}</h5>
-  <p>{{ticketOrder.total}}</p>
-
-  <h5>{{t "order.created"}}</h5>
-  <p>{{ticketOrder.created}}</p>
-
+  <div class="order"></div>
   {{/if}}
 
 </div>
