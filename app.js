@@ -136,8 +136,7 @@
 
       // Get order id field
       if (this.settings.order_id_field_id) {
-        this.orderIdField = this.ticketFields('custom_field_' + this.settings.order_id_field_id).name();
-        this.orderId = this.ticket().customField(this.orderIdField);
+        this.orderId = this.ticket().customField('custom_field_' + this.settings.order_id_field_id);
       }
 
       this.allRequiredPropertiesExist();
