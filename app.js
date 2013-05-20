@@ -124,7 +124,7 @@
     },
 
     handleFail: function() {
-      this.showError();
+      this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.server'));
     },
 
     init: function(data){
