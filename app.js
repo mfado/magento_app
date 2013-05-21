@@ -123,6 +123,10 @@
       this.switchTo('order', data);
     },
 
+    handleFail: function() {
+      this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.server'));
+    },
+
     init: function(data){
       if(!data.firstLoad){
         return;
