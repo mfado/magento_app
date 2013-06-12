@@ -23,91 +23,91 @@ parts:
       title: "Label for the Zendesk Order Number Field ID"
       value: "Order Number Field ID"
   - translation:
-      key: "txt.apps.magento.app.profile.customer_since"
+      key: "txt.apps.magento.profile.customer_since"
       title: "When the customer first became a customer"
       value: "Customer since"
   - translation:
-      key: "txt.apps.magento.app.profile.addresses"
+      key: "txt.apps.magento.profile.addresses"
       title: "The addresses of the customer"
       value: "Addresses"
   - translation:
-      key: "txt.apps.magento.app.profile.billing"
+      key: "txt.apps.magento.profile.billing"
       title: "The billing address of the customer"
       value: "Billing"
   - translation:
-      key: "txt.apps.magento.app.profile.shipping"
+      key: "txt.apps.magento.profile.shipping"
       title: "The shipping address of the customer"
       value: "Shipping"
   - translation:
-      key: "txt.apps.magento.app.profile.order"
+      key: "txt.apps.magento.profile.order"
       title: "A title for the order section which displays details about the order"
       value: "Order"
   - translation:
-      key: "txt.apps.magento.app.profile.guest"
+      key: "txt.apps.magento.profile.guest"
       title: "If a customer if a guest of the store"
       value: "Guest"
   - translation:
-      key: "txt.apps.magento.app.global.error.title"
+      key: "txt.apps.magento.global.error.title"
       title: "An error occurred"
       value: "An error occurred"
   - translation:
-      key: "txt.apps.magento.app.global.error.message"
+      key: "txt.apps.magento.global.error.message"
       title: "Please try the previous action again"
       value: "Please try the previous action again."
   - translation:
-      key: "txt.apps.magento.app.global.error.data"
+      key: "txt.apps.magento.global.error.data"
       title: "An error occured while reading the ticket"
       value: "Ticket data could not be read."
   - translation:
-      key: "txt.apps.magento.app.global.loading"
+      key: "txt.apps.magento.global.loading"
       title: "Details about the customer are loading"
       value: "Waiting for ticket data to load..."
   - translation:
-      key: "txt.apps.magento.app.global.requesting"
+      key: "txt.apps.magento.global.requesting"
       title: "Data is being requested from Magento"
       value: "Requesting data from Magento..."
   - translation:
-      key: "txt.apps.magento.app.orders.id"
+      key: "txt.apps.magento.orders.id"
       title: "Recent orders the customer has completed"
       value: "RECENT ORDERS"
   - translation:
-      key: "txt.apps.magento.app.orders.status"
+      key: "txt.apps.magento.orders.status"
       title: "The status of the recent orders"
       value: "STATUS"
   - translation:
-      key: "txt.apps.magento.app.order.details"
+      key: "txt.apps.magento.order.details"
       title: "Displaying the order details for"
       value: "Order details for"
   - translation:
-      key: "txt.apps.magento.app.order.status"
+      key: "txt.apps.magento.order.status"
       title: "The current status of the order"
       value: "Status"
   - translation:
-      key: "txt.apps.magento.app.order.currency"
+      key: "txt.apps.magento.order.currency"
       title: "The currency of the order"
       value: "Currency"
   - translation:
-      key: "txt.apps.magento.app.order.items"
+      key: "txt.apps.magento.order.items"
       title: "Items in the order"
       value: "Items"
   - translation:
-      key: "txt.apps.magento.app.order.created"
+      key: "txt.apps.magento.order.created"
       title: "When the order was created"
       value: "Created"
   - translation:
-      key: "txt.apps.magento.app.order.updated"
+      key: "txt.apps.magento.order.updated"
       title: "When the order was updated"
       value: "Updated"
   - translation:
-      key: "txt.apps.magento.app.order.store"
+      key: "txt.apps.magento.order.store"
       title: "Which store the order was placed through"
       value: "Store"
   - translation:
-      key: "txt.apps.magento.app.order.total"
+      key: "txt.apps.magento.order.total"
       title: "The total amount of the order"
       value: "Total"
   - translation:
-      key: "txt.apps.magento.app.order.error.message"
+      key: "txt.apps.magento.order.error.message"
       title: "Data is being requested from Magento"
       value: "Order does not exist"
       
