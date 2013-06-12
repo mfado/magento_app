@@ -11,21 +11,21 @@ parts:
       title: "Displays customer and order details from Magento"
       value: "Displays customer and order details from Magento."
   - translation:
-      key: "txt.apps.magento.app.parameters.url"
+      key: "txt.apps.magento.app.parameters.url.label"
       title: "Label for the Magento Store URL"
       value: "Store URL"
   - translation:
-      key: "txt.apps.magento.app.parameters.access_token"
+      key: "txt.apps.magento.app.parameters.access_token.label"
       title: "Label for the Magento Access token"
       value: "Access token"
   - translation:
-      key: "txt.apps.magento.app.parameters.order_id_field_id"
+      key: "txt.apps.magento.app.parameters.order_id_field_id.label"
       title: "Label for the Zendesk Order Number Field ID"
       value: "Order Number Field ID"
   - translation:
       key: "txt.apps.magento.profile.customer_since"
       title: "When the customer first became a customer"
-      value: "Customer since"
+      value: "Customer Since"
   - translation:
       key: "txt.apps.magento.profile.addresses"
       title: "The addresses of the customer"
@@ -45,7 +45,7 @@ parts:
   - translation:
       key: "txt.apps.magento.profile.guest"
       title: "If a customer if a guest of the store"
-      value: "Guest"
+      value: "(Guest)"
   - translation:
       key: "txt.apps.magento.global.error.title"
       title: "An error occurred"
@@ -55,8 +55,12 @@ parts:
       title: "Please try the previous action again"
       value: "Please try the previous action again."
   - translation:
+      key: "txt.apps.magento.global.error.server"
+      title: "An error occurred while communicating with the Magento server"
+      value: "The request failed. Please ensure your configuration is correct and try again."
+  - translation:
       key: "txt.apps.magento.global.error.data"
-      title: "An error occured while reading the ticket"
+      title: "An error occurred while reading the ticket"
       value: "Ticket data could not be read."
   - translation:
       key: "txt.apps.magento.global.loading"
@@ -110,4 +114,4 @@ parts:
       key: "txt.apps.magento.order.error.message"
       title: "Data is being requested from Magento"
       value: "Order does not exist"
-      
+
