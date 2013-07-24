@@ -35,15 +35,14 @@
     },
 
     handleChanged:  _.debounce(function(e) {
-
       // test if change event fired before app.activated
-      if (!this.hasActivated) {
-        return;
-      }
+      if (!this.hasActivated) { return; }
 
       if (e.propertyName === helpers.fmt("ticket.custom_field_%@", this.settings.order_id_field_id)) {
         this.orderId = e.newValue;
         this._appendTicketOrder();
+      } else if (e.propertyName === "ticket.requester.id") {
+        this.queryCustomer();
       }
     }, 500),
 
@@ -108,7 +107,7 @@
         this.orderId = this.ticket().customField('custom_field_' + this.settings.order_id_field_id);
       }
 
-      this.queryCustomer();
+      if (this.currentLocation() === 'ticket_sidebar') { this.queryCustomer(); }
     },
 
     queryCustomer: function(){
