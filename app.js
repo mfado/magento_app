@@ -26,40 +26,12 @@
 
     events: {
       'app.activated'                  : 'init',
-      'requiredProperties.ready'       : 'queryCustomer',
       '*.changed'                      : 'handleChanged',
       'getProfile.done'                : 'handleProfile',
       'getProfile.fail'                : 'handleFail',
       'getOrder.done'                  : 'handleOrder',
       'getOrder.fail'                  : 'handleFail',
       'click .toggle-address'          : 'toggleAddress'
-    },
-
-    // Functions
-    allRequiredPropertiesExist: function() {
-      if (this.requiredProperties.length > 0) {
-        var valid = this.validateRequiredProperty(this.requiredProperties[0]);
-
-        // prop is valid, remove from array
-        if (valid) {
-          this.requiredProperties.shift();
-        }
-
-        if (this.requiredProperties.length > 0 && this.currAttempt < this.MAX_ATTEMPTS) {
-          if (!valid) {
-            ++this.currAttempt;
-          }
-
-          _.delay(_.bind(this.allRequiredPropertiesExist, this), 100);
-          return;
-        }
-      }
-
-      if (this.currAttempt < this.MAX_ATTEMPTS) {
-        this.trigger('requiredProperties.ready');
-      } else {
-        this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.data'));
-      }
     },
 
     handleChanged:  _.debounce(function(e) {
@@ -130,16 +102,13 @@
 
       this.hasActivated = true;
       this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url);
-      this.requiredProperties = [
-        'ticket.requester.email'
-      ];
 
       // Get order id field
       if (this.settings.order_id_field_id) {
         this.orderId = this.ticket().customField('custom_field_' + this.settings.order_id_field_id);
       }
 
-      this.allRequiredPropertiesExist();
+      this.queryCustomer();
     },
 
     queryCustomer: function(){
@@ -152,15 +121,6 @@
       this.ajax('getOrder', this.orderId);
     },
 
-    safeGetPath: function(propertyPath) {
-      return _.inject( propertyPath.split('.'), function(context, segment) {
-        if (context == null) { return context; }
-        var obj = context[segment];
-        if ( _.isFunction(obj) ) { obj = obj.call(context); }
-        return obj;
-      }, this);
-    },
-
     showError: function(title, msg) {
       this.switchTo('error', {
         title: title || this.I18n.t('global.error.title'),
@@ -171,11 +131,6 @@
     toggleAddress: function (e) {
       this.$(e.target).parent().next('p').toggleClass('hide');
       return false;
-    },
-
-    validateRequiredProperty: function(propertyPath) {
-      var value = this.safeGetPath(propertyPath);
-      return value != null && value !== '' && value !== 'no';
     },
 
     // Helpers
