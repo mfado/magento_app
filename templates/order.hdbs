@@ -1,16 +1,16 @@
-<h4>{{t "order.details"}} <a target="_blank" href="{{admin_url}}">{{id}}</a><h4>
+<h4>{{t "order.details"}} <a target="_blank" href="{{this.admin_url}}">{{this.id}}</a><h4>
 
 <h5>{{t "order.store"}}</h5>
-<p>{{{store}}}</p>
+<p>{{{this.store}}}</p>
 
 <h5>{{t "order.status"}}</h5>
-<p><span class="badge badge-{{status}}">{{status}}</span></p>
+<p><span class="badge badge-{{this.status}}">{{this.status}}</span></p>
 
 <h5>{{t "order.currency"}}</h5>
-<p>{{currency}}</p>
+<p>{{this.currency}}</p>
 
 <h5>{{t "order.total"}}</h5>
-<p>{{total}}</p>
+<p>{{this.total}}</p>
 
 <h5>{{t "order.created"}}</h5>
-<p>{{created}}</p>
+<p>{{this.created}}</p>

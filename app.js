@@ -71,7 +71,7 @@
 
       if (e.propertyName === helpers.fmt("ticket.custom_field_%@", this.settings.order_id_field_id)) {
         this.orderId = e.newValue;
-        this.queryCustomer();
+        this._appendTicketOrder();
       }
     }, 500),
 
@@ -102,14 +102,10 @@
         this.profileData.recentOrders = this.profileData.orders.reverse();
       }
 
-      this._orderToShow();
-
       // Got the profile data, populate interface
       this.switchTo('profile', this.profileData);
 
-      // Insert order html into view
-      var orderTemplate = this.renderTemplate('order', this.profileData.ticketOrder);
-      this.$('.order').html(orderTemplate);
+      this._appendTicketOrder();
     },
 
     handleOrder: function(data) {
@@ -216,9 +212,9 @@
       };
     },
 
-    // Look to see if we should show a specific order's details
-    _orderToShow: function(){
-      var orderId = this.orderId;
+    _appendTicketOrder: function(){
+      var orderId = this.orderId,
+          orderTemplate = "";
 
       // If there is an order ID custom field setup, look to see if the order ID exists in the profile data
       if (orderId) {
@@ -226,10 +222,13 @@
           return (order.id === orderId);
         });
 
-        if (!_.isUndefined(this.profileData.ticketOrder)) {
+        if (this.profileData.ticketOrder) {
           this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
+          orderTemplate = "<hr />" + this.renderTemplate('order', this.profileData.ticketOrder);
         }
       }
+
+      this.$('.order').html(orderTemplate);
     }
 
   };
