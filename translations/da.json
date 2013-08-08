@@ -1,0 +1,51 @@
+{
+  "app": {
+    "description": "Viser kunde- og ordredetaljer fra Magento.",
+    "parameters": {
+      "url": {
+        "label": "Forretnings-URL"
+      },
+      "access_token": {
+        "label": "Adgangstoken"
+      },
+      "order_id_field_id": {
+        "label": "Id til feltet Ordrenummer"
+      }
+    }
+  },
+  "profile": {
+    "customer_since": "Kunde siden",
+    "addresses": "Adresser",
+    "billing": "Fakturering",
+    "shipping": "Forsendelse",
+    "order": "Ordre",
+    "guest": "(Gæst)"
+  },
+  "global": {
+    "error": {
+      "title": "Der forekom en fejl",
+      "message": "Prøv forrige handling igen.",
+      "server": "Henvendelsen mislykkedes. Sørg for, at din konfiguration er korrekt, og prøv igen.",
+      "data": "Ticket-dataene kunne ikke læses."
+    },
+    "loading": "Venter på, at ticket-dataene indlæses...",
+    "requesting": "Anmoder om data fra Magento..."
+  },
+  "orders": {
+    "id": "SENESTE ORDRER",
+    "status": "STATUS"
+  },
+  "order": {
+    "details": "Ordredetaljer for",
+    "status": "Status",
+    "currency": "Valuta",
+    "items": "Elementer",
+    "created": "Oprettet",
+    "updated": "Opdateret",
+    "store": "Forretning",
+    "total": "I alt",
+    "error": {
+      "message": "Ordren eksisterer ikke"
+    }
+  }
+}
