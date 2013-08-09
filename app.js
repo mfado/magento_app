@@ -108,7 +108,9 @@
       this.switchTo('profile', this.profileData);
 
       // Insert order html into view
-      var orderTemplate = this.renderTemplate('order', this.profileData.ticketOrder);
+      var orderTemplate = this.renderTemplate('order', {
+        order: this.profileData.ticketOrder
+      });
       this.$('.order').html(orderTemplate);
     },
 
