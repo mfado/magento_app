@@ -178,7 +178,9 @@
 
         if (this.profileData.ticketOrder) {
           this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
-          orderTemplate = "<hr />" + this.renderTemplate('order', this.profileData.ticketOrder);
+          orderTemplate = "<hr />" + this.renderTemplate('order', {
+            order: this.profileData.ticketOrder
+          });
         }
       }
 

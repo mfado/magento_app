@@ -1,0 +1,51 @@
+{
+  "app": {
+    "description": "Affiche les détails du client et de la commande de Magento.",
+    "parameters": {
+      "url": {
+        "label": "URL du magasin"
+      },
+      "access_token": {
+        "label": "Jeton d’accès"
+      },
+      "order_id_field_id": {
+        "label": "ID de champ du numéro de commande"
+      }
+    }
+  },
+  "profile": {
+    "customer_since": "Client depuis",
+    "addresses": "Adresses",
+    "billing": "Facturation",
+    "shipping": "Livraison",
+    "order": "Commande",
+    "guest": "(invité)"
+  },
+  "global": {
+    "error": {
+      "title": "Une erreur est survenue.",
+      "message": "Veuillez réessayer l’action précédente.",
+      "server": "Échec de la demande. Vérifiez que votre configuration est correcte et réessayez.",
+      "data": "Impossible de lire les données du ticket."
+    },
+    "loading": "En attente du chargement des données du ticket…",
+    "requesting": "Demande des données à Magento en cours…"
+  },
+  "orders": {
+    "id": "COMMANDES RÉCENTES",
+    "status": "STATUT"
+  },
+  "order": {
+    "details": "Détails de la commande pour",
+    "status": "Statut",
+    "currency": "Devise",
+    "items": "Articles",
+    "created": "Créé",
+    "updated": "Mises à jour",
+    "store": "Magasin",
+    "total": "Total",
+    "error": {
+      "message": "La commande n’existe pas."
+    }
+  }
+}
