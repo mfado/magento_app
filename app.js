@@ -11,7 +11,6 @@
     currAttempt : 0,
     defaultState: 'loading',
     initialised: false,
-    profileData: {},
     magentoApiEndpoint: '',
 
     resources: {
@@ -40,7 +39,11 @@
 
       if (e.propertyName === helpers.fmt("ticket.custom_field_%@", this.settings.order_id_field_id)) {
         this.orderId = e.newValue;
-        this._appendTicketOrder();
+        if (this.profileData) {
+          this._appendTicketOrder();
+        } else {
+          this.queryOrder();
+        }
       } else if (e.propertyName === "ticket.requester.id") {
         this.queryCustomer();
       }
@@ -172,14 +175,21 @@
 
       // If there is an order ID custom field setup, look to see if the order ID exists in the profile data
       if (orderId) {
+        orderTemplate += "<hr />";
+
         this.profileData.ticketOrder = _.find(this.profileData.orders, function(order){
           return (order.id === orderId);
         });
 
         if (this.profileData.ticketOrder) {
           this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
-          orderTemplate = "<hr />" + this.renderTemplate('order', {
+          orderTemplate += this.renderTemplate('order', {
             order: this.profileData.ticketOrder
+          });
+        } else {
+          orderTemplate += this.renderTemplate('error', {
+            title: this.I18n.t('global.error.title'),
+            message: this.I18n.t('order.error.message')
           });
         }
       }
