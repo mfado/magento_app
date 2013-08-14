@@ -34,9 +34,6 @@
     },
 
     handleChanged:  _.debounce(function(e) {
-      // test if change event fired before app.activated
-      if (!this.hasActivated) { return; }
-
       if (e.propertyName === helpers.fmt("ticket.custom_field_%@", this.settings.order_id_field_id)) {
         this.orderId = e.newValue;
         if (this.profileData) {
@@ -83,14 +80,13 @@
     },
 
     handleOrder: function(data) {
-
       // Check that the response was successfuly
-      if (_.isEmpty(data.id)) { //_.has(data, 'success') && data.success === false) {
+      if (_.isEmpty(data.id)) {
         this.showError(this.I18n.t('global.error.title'), data.message || this.I18n.t('order.error.message'));
         return;
       }
 
-      this.switchTo('order', data);
+      this.switchTo('order', { order: data });
     },
 
     handleFail: function() {
@@ -102,7 +98,6 @@
         return;
       }
 
-      this.hasActivated = true;
       this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url);
 
       // Get order id field
