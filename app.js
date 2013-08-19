@@ -4,9 +4,6 @@
 
   return {
 
-    // Constants
-    MAX_ATTEMPTS : 20,
-
     // Properties
     currAttempt : 0,
     defaultState: 'loading',
