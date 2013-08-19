@@ -5,9 +5,7 @@
   return {
 
     // Properties
-    currAttempt : 0,
     defaultState: 'loading',
-    initialised: false,
     magentoApiEndpoint: '',
 
     resources: {
