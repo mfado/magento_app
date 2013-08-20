@@ -39,9 +39,6 @@
   <h5>{{t "profile.customer_since"}}</h5>
   <p>{{created}}</p>
 
-  {{#if ticketOrder}}
-  <hr>
   <div class="order"></div>
-  {{/if}}
 
 </div>

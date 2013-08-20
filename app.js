@@ -4,14 +4,8 @@
 
   return {
 
-    // Constants
-    MAX_ATTEMPTS : 20,
-
     // Properties
-    currAttempt : 0,
     defaultState: 'loading',
-    initialised: false,
-    profileData: {},
     magentoApiEndpoint: '',
 
     resources: {
@@ -26,7 +20,6 @@
 
     events: {
       'app.activated'                  : 'init',
-      'requiredProperties.ready'       : 'queryCustomer',
       '*.changed'                      : 'handleChanged',
       'getProfile.done'                : 'handleProfile',
       'getProfile.fail'                : 'handleFail',
@@ -35,42 +28,15 @@
       'click .toggle-address'          : 'toggleAddress'
     },
 
-    // Functions
-    allRequiredPropertiesExist: function() {
-      if (this.requiredProperties.length > 0) {
-        var valid = this.validateRequiredProperty(this.requiredProperties[0]);
-
-        // prop is valid, remove from array
-        if (valid) {
-          this.requiredProperties.shift();
-        }
-
-        if (this.requiredProperties.length > 0 && this.currAttempt < this.MAX_ATTEMPTS) {
-          if (!valid) {
-            ++this.currAttempt;
-          }
-
-          _.delay(_.bind(this.allRequiredPropertiesExist, this), 100);
-          return;
-        }
-      }
-
-      if (this.currAttempt < this.MAX_ATTEMPTS) {
-        this.trigger('requiredProperties.ready');
-      } else {
-        this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.data'));
-      }
-    },
-
     handleChanged:  _.debounce(function(e) {
-
-      // test if change event fired before app.activated
-      if (!this.hasActivated) {
-        return;
-      }
-
       if (e.propertyName === helpers.fmt("ticket.custom_field_%@", this.settings.order_id_field_id)) {
         this.orderId = e.newValue;
+        if (this.profileData) {
+          this._appendTicketOrder();
+        } else {
+          this.queryOrder();
+        }
+      } else if (e.propertyName === "ticket.requester.id") {
         this.queryCustomer();
       }
     }, 500),
@@ -102,27 +68,20 @@
         this.profileData.recentOrders = this.profileData.orders.reverse();
       }
 
-      this._orderToShow();
-
       // Got the profile data, populate interface
       this.switchTo('profile', this.profileData);
 
-      // Insert order html into view
-      var orderTemplate = this.renderTemplate('order', {
-        order: this.profileData.ticketOrder
-      });
-      this.$('.order').html(orderTemplate);
+      this._appendTicketOrder();
     },
 
     handleOrder: function(data) {
-
       // Check that the response was successfuly
-      if (_.isEmpty(data.id)) { //_.has(data, 'success') && data.success === false) {
+      if (_.isEmpty(data.id)) {
         this.showError(this.I18n.t('global.error.title'), data.message || this.I18n.t('order.error.message'));
         return;
       }
 
-      this.switchTo('order', data);
+      this.switchTo('order', { order: data });
     },
 
     handleFail: function() {
@@ -134,18 +93,14 @@
         return;
       }
 
-      this.hasActivated = true;
       this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url);
-      this.requiredProperties = [
-        'ticket.requester.email'
-      ];
 
       // Get order id field
       if (this.settings.order_id_field_id) {
         this.orderId = this.ticket().customField('custom_field_' + this.settings.order_id_field_id);
       }
 
-      this.allRequiredPropertiesExist();
+      if (this.currentLocation() === 'ticket_sidebar') { this.queryCustomer(); }
     },
 
     queryCustomer: function(){
@@ -158,15 +113,6 @@
       this.ajax('getOrder', this.orderId);
     },
 
-    safeGetPath: function(propertyPath) {
-      return _.inject( propertyPath.split('.'), function(context, segment) {
-        if (context == null) { return context; }
-        var obj = context[segment];
-        if ( _.isFunction(obj) ) { obj = obj.call(context); }
-        return obj;
-      }, this);
-    },
-
     showError: function(title, msg) {
       this.switchTo('error', {
         title: title || this.I18n.t('global.error.title'),
@@ -177,11 +123,6 @@
     toggleAddress: function (e) {
       this.$(e.target).parent().next('p').toggleClass('hide');
       return false;
-    },
-
-    validateRequiredProperty: function(propertyPath) {
-      var value = this.safeGetPath(propertyPath);
-      return value != null && value !== '' && value !== 'no';
     },
 
     // Helpers
@@ -218,20 +159,32 @@
       };
     },
 
-    // Look to see if we should show a specific order's details
-    _orderToShow: function(){
-      var orderId = this.orderId;
+    _appendTicketOrder: function(){
+      var orderId = this.orderId,
+          orderTemplate = "";
 
       // If there is an order ID custom field setup, look to see if the order ID exists in the profile data
       if (orderId) {
+        orderTemplate += "<hr />";
+
         this.profileData.ticketOrder = _.find(this.profileData.orders, function(order){
           return (order.id === orderId);
         });
 
-        if (!_.isUndefined(this.profileData.ticketOrder)) {
+        if (this.profileData.ticketOrder) {
           this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
+          orderTemplate += this.renderTemplate('order', {
+            order: this.profileData.ticketOrder
+          });
+        } else {
+          orderTemplate += this.renderTemplate('error', {
+            title: this.I18n.t('global.error.title'),
+            message: this.I18n.t('order.error.message')
+          });
         }
       }
+
+      this.$('.order').html(orderTemplate);
     }
 
   };
