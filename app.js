@@ -19,13 +19,13 @@
     },
 
     events: {
-      'app.activated'                  : 'init',
-      '*.changed'                      : 'handleChanged',
-      'getProfile.done'                : 'handleProfile',
-      'getProfile.fail'                : 'handleFail',
-      'getOrder.done'                  : 'handleOrder',
-      'getOrder.fail'                  : 'handleFail',
-      'click .toggle-address'          : 'toggleAddress'
+      'app.activated'        : 'init',
+      '*.changed'            : 'handleChanged',
+      'getProfile.done'      : 'handleProfile',
+      'getProfile.fail'      : 'handleFail',
+      'getOrder.done'        : 'handleOrder',
+      'getOrder.fail'        : 'handleFail',
+      'click .toggle-address': 'toggleAddress'
     },
 
     handleChanged:  _.debounce(function(e) {
