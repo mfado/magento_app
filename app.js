@@ -68,6 +68,8 @@
         this.profileData.recentOrders = this.profileData.orders.reverse();
       }
 
+      this.profileData.recentOrders = _.map(this.profileData.recentOrders, this.translateOrder.bind(this));
+
       // Got the profile data, populate interface
       this.switchTo('profile', this.profileData);
 
@@ -81,11 +83,17 @@
         return;
       }
 
-      this.switchTo('order', { order: data });
+      this.switchTo('order', { order: this.translateOrder(data) });
     },
 
     handleFail: function() {
       this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.server'));
+    },
+
+    translateOrder: function(data) {
+      var order = data.order || data;
+      order.status_locale = this.I18n.t('order.statuses.' + order.status);
+      return data;
     },
 
     init: function(data){
@@ -174,7 +182,7 @@
         if (this.profileData.ticketOrder) {
           this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
           orderTemplate += this.renderTemplate('order', {
-            order: this.profileData.ticketOrder
+            order: this.translateOrder(this.profileData.ticketOrder)
           });
         } else {
           orderTemplate += this.renderTemplate('error', {
