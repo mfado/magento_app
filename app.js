@@ -22,7 +22,7 @@
       'app.activated'        : 'init',
       '*.changed'            : 'handleChanged',
       'getProfile.done'      : 'handleProfile',
-      'getProfile.fail'      : 'handleFail',
+      'getProfile.fail'      : 'handleProfileFail',
       'getOrder.done'        : 'handleOrder',
       'getOrder.fail'        : 'handleFail',
       'click .toggle-address': 'toggleAddress'
@@ -86,6 +86,15 @@
 
     handleFail: function() {
       this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.server'));
+    },
+
+    handleProfileFail: function(resp) {
+      if (resp.status === 404) {
+        this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.noprofile'));
+      }
+      else {
+        this.handleFail();
+      }
     },
 
     init: function(data){
