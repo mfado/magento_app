@@ -22,7 +22,7 @@
       'app.activated'        : 'init',
       '*.changed'            : 'handleChanged',
       'getProfile.done'      : 'handleProfile',
-      'getProfile.fail'      : 'handleFail',
+      'getProfile.fail'      : 'handleProfileFail',
       'getOrder.done'        : 'handleOrder',
       'getOrder.fail'        : 'handleFail',
       'click .toggle-address': 'toggleAddress'
@@ -94,6 +94,15 @@
       var order = data.order || data;
       order.status_locale = this.I18n.t('order.statuses.' + order.status);
       return data;
+    },
+
+    handleProfileFail: function(resp) {
+      if (resp.status === 404) {
+        this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.noprofile'));
+      }
+      else {
+        this.handleFail();
+      }
     },
 
     init: function(data){
