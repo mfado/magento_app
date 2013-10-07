@@ -63,6 +63,10 @@ parts:
       title: "An error occurred while reading the ticket"
       value: "Ticket data could not be read."
   - translation:
+      key: "txt.apps.magento.global.error.noprofile"
+      title: "Error message displayed when the customer doesn't exist"
+      value: "Customer does not exist."
+  - translation:
       key: "txt.apps.magento.global.loading"
       title: "Details about the customer are loading"
       value: "Waiting for ticket data to load..."
