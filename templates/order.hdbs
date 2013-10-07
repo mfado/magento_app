@@ -4,7 +4,7 @@
 <p>{{{order.store}}}</p>
 
 <h5>{{t "order.status"}}</h5>
-<p><span class="badge badge-{{order.status}}">{{order.status}}</span></p>
+<p><span class="badge badge-{{order.status}}">{{order.status_locale}}</span></p>
 
 <h5>{{t "order.currency"}}</h5>
 <p>{{order.currency}}</p>
