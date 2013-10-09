@@ -46,7 +46,8 @@
     "store": "Store",
     "total": "Total",
     "error": {
-      "message": "Order does not exist"
+      "message": "Order does not exist",
+      "no_address": "No address."
     }
   }
 }

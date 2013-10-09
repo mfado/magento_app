@@ -30,10 +30,22 @@
     <h5>{{t "profile.addresses"}}</h5>
 
     <h6><a href="#" class="toggle-address">{{t "profile.billing"}}</a></h6>
-    <p class="hide">{{{addresses.billing}}}</p>
+    <p class="hide">
+      {{#if addresses.billing}}
+        {{{addresses.billing}}}
+      {{else}}
+        {{t "order.error.no_address"}}
+      {{/if}}
+    </p>
 
     <h6><a href="#" class="toggle-address">{{t "profile.shipping"}}</a></h6>
-    <p class="hide">{{{addresses.shipping}}}</p>
+    <p class="hide">
+      {{#if addresses.shipping}}
+        {{{addresses.shipping}}}
+      {{else}}
+        {{t "order.error.no_address"}}
+      {{/if}}
+    </p>
   </div>
 
   <h5>{{t "profile.customer_since"}}</h5>

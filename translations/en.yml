@@ -118,3 +118,7 @@ parts:
       key: "txt.apps.magento.order.error.message"
       title: "Data is being requested from Magento"
       value: "Order does not exist"
+  - translation:
+      key: "txt.apps.magento.order.error.no_address"
+      title: "No address is present for that user"
+      value: "No address."
