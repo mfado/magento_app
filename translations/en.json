@@ -47,11 +47,6 @@
     "total": "Total",
     "error": {
       "message": "Order does not exist"
-    },
-    "statuses": {
-      "pending": "Pending",
-      "complete": "Complete",
-      "cancelled": "Cancelled"
     }
   }
 }
