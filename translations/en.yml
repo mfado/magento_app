@@ -118,18 +118,3 @@ parts:
       key: "txt.apps.magento.order.error.message"
       title: "Data is being requested from Magento"
       value: "Order does not exist"
-  - translation:
-      key: "txt.apps.magento.statuses.pending"
-      title: "Order satus pending in Magento"
-      value: "Pending"
-  - translation:
-      key: "txt.apps.magento.statuses.complete"
-      title: "Order satus Complete in Magento"
-      value: "Complete"
-  - translation:
-      key: "txt.apps.magento.statuses.cancelled"
-      title: "Order satus Cancelled in Magento"
-      value: "Cancelled"
-
-
-

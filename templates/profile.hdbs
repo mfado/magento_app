@@ -19,7 +19,7 @@
       {{#recentOrders}}
       <tr class="_tooltip" data-title="{{titles}}" data-placement="top">
         <td><a href="{{admin_url}}" target="_blank">#{{id}}</td>
-        <td><span class="badge badge-{{status}}">{{status_locale}}</a></td>
+        <td><span class="badge badge-{{status}}">{{status}}</a></td>
       </tr>
       {{/recentOrders}}
     </tbody>
