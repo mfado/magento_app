@@ -1,2 +1,53 @@
 {
+  "app": {
+    "description": "显示来自 Magento 的客户和订单详情。",
+    "parameters": {
+      "url": {
+        "label": "商店 URL"
+      },
+      "access_token": {
+        "label": "访问密钥"
+      },
+      "order_id_field_id": {
+        "label": "订单号字段 ID"
+      }
+    }
+  },
+  "profile": {
+    "customer_since": "客户加入日期",
+    "addresses": "地址",
+    "billing": "帐单地址",
+    "shipping": "送货地址",
+    "order": "订单",
+    "guest": "（来宾）"
+  },
+  "global": {
+    "error": {
+      "title": "发生错误",
+      "message": "请重试先前的操作。",
+      "server": "请求失败。请确保您的配置正确并重试。",
+      "data": "无法读取工单数据。",
+      "noprofile": "客户不存在。"
+    },
+    "loading": "正在等待工单数据加载……",
+    "requesting": "正在从 Magento 请求数据……"
+  },
+  "orders": {
+    "id": "最近的订单",
+    "status": "状态"
+  },
+  "order": {
+    "details": "订单详情",
+    "status": "状态",
+    "currency": "币种",
+    "items": "项目",
+    "created": "创建时间",
+    "updated": "更新时间",
+    "store": "商店",
+    "total": "全部",
+    "error": {
+      "message": "订单不存在",
+      "no_address": "没有地址。"
+    }
+  }
 }

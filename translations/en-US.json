@@ -1,2 +1,53 @@
 {
+  "app": {
+    "description": "Displays customer and order details from Magento.",
+    "parameters": {
+      "url": {
+        "label": "Store URL"
+      },
+      "access_token": {
+        "label": "Access token"
+      },
+      "order_id_field_id": {
+        "label": "Order Number Field ID"
+      }
+    }
+  },
+  "profile": {
+    "customer_since": "Customer Since",
+    "addresses": "Addresses",
+    "billing": "Billing",
+    "shipping": "Shipping",
+    "order": "Order",
+    "guest": "(Guest)"
+  },
+  "global": {
+    "error": {
+      "title": "An error occurred",
+      "message": "Please try the previous action again.",
+      "server": "The request failed. Please ensure your configuration is correct and try again.",
+      "data": "Ticket data could not be read.",
+      "noprofile": "Customer does not exist."
+    },
+    "loading": "Waiting for ticket data to load...",
+    "requesting": "Requesting data from Magento..."
+  },
+  "orders": {
+    "id": "RECENT ORDERS",
+    "status": "STATUS"
+  },
+  "order": {
+    "details": "Order details for",
+    "status": "Status",
+    "currency": "Currency",
+    "items": "Items",
+    "created": "Created",
+    "updated": "Updated",
+    "store": "Store",
+    "total": "Total",
+    "error": {
+      "message": "Order does not exist",
+      "no_address": "No address."
+    }
+  }
 }

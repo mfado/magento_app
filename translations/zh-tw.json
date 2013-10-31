@@ -1,2 +1,53 @@
 {
+  "app": {
+    "description": "顯示來自 Magento 的客戶和訂單詳情。",
+    "parameters": {
+      "url": {
+        "label": "商店 URL"
+      },
+      "access_token": {
+        "label": "存取金鑰"
+      },
+      "order_id_field_id": {
+        "label": "訂單號碼欄位 ID"
+      }
+    }
+  },
+  "profile": {
+    "customer_since": "客戶加入日期",
+    "addresses": "地址",
+    "billing": "帳單地址",
+    "shipping": "送貨地址",
+    "order": "訂單",
+    "guest": "（來賓）"
+  },
+  "global": {
+    "error": {
+      "title": "發生錯誤",
+      "message": "請再試一次之前的操作。",
+      "server": "請求失敗。請確保您的設定正確並再試一次。",
+      "data": "不能讀取工單資料。",
+      "noprofile": "客戶不存在。"
+    },
+    "loading": "正在等待工單資料載入……",
+    "requesting": "正在從 Magento 請求資料……"
+  },
+  "orders": {
+    "id": "最近的訂單",
+    "status": "狀態"
+  },
+  "order": {
+    "details": "訂單詳情",
+    "status": "狀態",
+    "currency": "貨幣",
+    "items": "項目",
+    "created": "建立時間",
+    "updated": "更新時間",
+    "store": "商店",
+    "total": "全部",
+    "error": {
+      "message": "訂單不存在",
+      "no_address": "無地址。"
+    }
+  }
 }

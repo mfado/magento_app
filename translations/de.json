@@ -1,2 +1,53 @@
 {
+  "app": {
+    "description": "Zeigt Kunden- und Bestelldetails von Magento an.",
+    "parameters": {
+      "url": {
+        "label": "Shop-URL"
+      },
+      "access_token": {
+        "label": "Zugriffstoken"
+      },
+      "order_id_field_id": {
+        "label": "ID des Bestellnummerfelds"
+      }
+    }
+  },
+  "profile": {
+    "customer_since": "Kunde seit",
+    "addresses": "Adressen",
+    "billing": "Rechnung",
+    "shipping": "Versand",
+    "order": "Bestellung",
+    "guest": "(Gast)"
+  },
+  "global": {
+    "error": {
+      "title": "Fehler aufgetreten",
+      "message": "Wiederholen Sie die vorherige Aktion.",
+      "server": "Anfrage fehlgeschlagen. Stellen Sie sicher, dass Ihre Konfiguration richtig ist, und versuchen Sie es noch einmal.",
+      "data": "Ticketdaten konnten nicht gelesen werden.",
+      "noprofile": "Kunde nicht vorhanden."
+    },
+    "loading": "Warten, bis Ticketdaten geladen sind...",
+    "requesting": "Daten von Magento anfordern..."
+  },
+  "orders": {
+    "id": "JÜNGSTE BESTELLUNGEN",
+    "status": "STATUS"
+  },
+  "order": {
+    "details": "Bestelldetails für",
+    "status": "Status",
+    "currency": "Währung",
+    "items": "Artikel",
+    "created": "Erstellt",
+    "updated": "Aktualisiert",
+    "store": "Shop",
+    "total": "Gesamt",
+    "error": {
+      "message": "Bestellung nicht vorhanden",
+      "no_address": "Keine Adresse."
+    }
+  }
 }

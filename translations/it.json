@@ -1,2 +1,53 @@
 {
+  "app": {
+    "description": "Visualizza informazioni dettagliate su cliente e ordine da Magento.",
+    "parameters": {
+      "url": {
+        "label": "URL negozio"
+      },
+      "access_token": {
+        "label": "Token di accesso"
+      },
+      "order_id_field_id": {
+        "label": "ID campo numero ordine"
+      }
+    }
+  },
+  "profile": {
+    "customer_since": "Cliente da",
+    "addresses": "Indirizzi",
+    "billing": "Fatturazione",
+    "shipping": "Spedizione",
+    "order": "Ordine",
+    "guest": "(Ospite)"
+  },
+  "global": {
+    "error": {
+      "title": "Si è verificato un errore",
+      "message": "Riprova l’azione precedente.",
+      "server": "Richiesta non riuscita. Verificate che la configurazione sia corretta e riprovate.",
+      "data": "Impossibile leggere i dati del ticket.",
+      "noprofile": "Il cliente non esiste."
+    },
+    "loading": "In attesa del caricamento dei dati del ticket...",
+    "requesting": "Richiesta dati da Magento in corso..."
+  },
+  "orders": {
+    "id": "ORDINI RECENTI",
+    "status": "STATO"
+  },
+  "order": {
+    "details": "Dettagli ordine per",
+    "status": "Stato",
+    "currency": "Valuta",
+    "items": "Voci",
+    "created": "Creato",
+    "updated": "Aggiornato",
+    "store": "Negozio",
+    "total": "Totale",
+    "error": {
+      "message": "L’ordine non esiste.",
+      "no_address": "Nessun indirizzo."
+    }
+  }
 }

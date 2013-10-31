@@ -1,2 +1,53 @@
 {
+  "app": {
+    "description": "Geeft info over klant en order van Magento weer.",
+    "parameters": {
+      "url": {
+        "label": "Webadres van winkel"
+      },
+      "access_token": {
+        "label": "Toegangstoken"
+      },
+      "order_id_field_id": {
+        "label": "Id van ordernummerveld"
+      }
+    }
+  },
+  "profile": {
+    "customer_since": "Klant sinds",
+    "addresses": "Adressen",
+    "billing": "Facturering",
+    "shipping": "Verzending",
+    "order": "Order",
+    "guest": "(Gast)"
+  },
+  "global": {
+    "error": {
+      "title": "Fout opgetreden",
+      "message": "Probeer de vorige actie nog een keer.",
+      "server": "De aanvraag is mislukt. Zorg ervoor dat uw configuratie correct is en probeer het opnieuw.",
+      "data": "Kan ticketgegevens niet lezen.",
+      "noprofile": "Klant bestaat niet."
+    },
+    "loading": "Wacht tot ticketgegevens zijn geladen...",
+    "requesting": "Gegevens opvragen bij Magento..."
+  },
+  "orders": {
+    "id": "RECENTE ORDERS",
+    "status": "STATUS"
+  },
+  "order": {
+    "details": "Orderdetails voor",
+    "status": "Status",
+    "currency": "Valuta",
+    "items": "Items",
+    "created": "Gemaakt op",
+    "updated": "Bijgewerkt",
+    "store": "Winkel",
+    "total": "Totaal",
+    "error": {
+      "message": "Order bestaat niet",
+      "no_address": "Geen adres."
+    }
+  }
 }

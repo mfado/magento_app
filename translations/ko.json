@@ -1,2 +1,53 @@
 {
+  "app": {
+    "description": "Magento에서 고객 및 주문 정보를 표시합니다.",
+    "parameters": {
+      "url": {
+        "label": "스토어 URL"
+      },
+      "access_token": {
+        "label": "액세스 토큰"
+      },
+      "order_id_field_id": {
+        "label": "주문 번호 필드 ID"
+      }
+    }
+  },
+  "profile": {
+    "customer_since": "최초 구매 날짜",
+    "addresses": "주소",
+    "billing": "청구",
+    "shipping": "배송",
+    "order": "주문",
+    "guest": "(방문자)"
+  },
+  "global": {
+    "error": {
+      "title": "오류가 발생했습니다",
+      "message": "다시 이전 작업을 시도하십시오.",
+      "server": "요청에 실패했습니다. 구성이 올바른지 확인한 후 다시 시도하십시오.",
+      "data": "티켓 데이터를 읽을 수 없습니다.",
+      "noprofile": "고객이 존재하지 않습니다."
+    },
+    "loading": "티켓 데이터가 로드할 때까지 대기 중…",
+    "requesting": "Magento에서 데이터 요청 중…"
+  },
+  "orders": {
+    "id": "최근 주문",
+    "status": "상태"
+  },
+  "order": {
+    "details": "주문 정보:",
+    "status": "상태",
+    "currency": "통화",
+    "items": "항목",
+    "created": "만든 날짜",
+    "updated": "마지막 업데이트",
+    "store": "스토어",
+    "total": "합계",
+    "error": {
+      "message": "주문이 없습니다",
+      "no_address": "주소가 없습니다."
+    }
+  }
 }
