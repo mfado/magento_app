@@ -14,8 +14,11 @@
     },
 
     requests: {
-      'getProfile'   : function(email)   { return this._getRequest(helpers.fmt(this.resources.PROFILE_URI, this.magentoApiEndpoint, email)); },
-      'getOrder'     : function(orderId) { return this._getRequest(helpers.fmt(this.resources.ORDER_URI, this.magentoApiEndpoint, orderId)); }
+      'getProfile': function(email)   { return this._getRequest(helpers.fmt(this.resources.PROFILE_URI, this.magentoApiEndpoint, email)); },
+      'getOrder'  : function(orderId) { return this._getRequest(helpers.fmt(this.resources.ORDER_URI, this.magentoApiEndpoint, orderId)); },
+      'userInfo'  : {
+        url: '/api/v2/users/me.json'
+      }
     },
 
     events: {
@@ -25,7 +28,24 @@
       'getProfile.fail'      : 'handleProfileFail',
       'getOrder.done'        : 'handleOrder',
       'getOrder.fail'        : 'handleFail',
-      'click .toggle-address': 'toggleAddress'
+      'click .toggle-address': 'toggleAddress',
+      'userInfo.done'        : 'onUserInfoDone'
+    },
+
+    onUserInfoDone: function(data) {
+      this.locale = data.user.locale;
+    },
+
+    localizeDate: function(date, params) {
+      var options = _.extend({
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      }, params || {});
+      return new Date(date).toLocaleDateString(this.locale, options);
     },
 
     handleChanged:  _.debounce(function(e) {
@@ -69,6 +89,7 @@
       }
 
       // Got the profile data, populate interface
+      this.profileData.created = this.localizeDate(this.profileData.created);
       this.switchTo('profile', this.profileData);
 
       this._appendTicketOrder();
@@ -101,15 +122,16 @@
       if(!data.firstLoad){
         return;
       }
+      this.ajax('userInfo').done(function() {
+        this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url);
 
-      this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url);
+        // Get order id field
+        if (this.settings.order_id_field_id) {
+          this.orderId = this.ticket().customField('custom_field_' + this.settings.order_id_field_id);
+        }
 
-      // Get order id field
-      if (this.settings.order_id_field_id) {
-        this.orderId = this.ticket().customField('custom_field_' + this.settings.order_id_field_id);
-      }
-
-      if (this.currentLocation() === 'ticket_sidebar') { this.queryCustomer(); }
+        if (this.currentLocation() === 'ticket_sidebar') { this.queryCustomer(); }
+      }.bind(this));
     },
 
     queryCustomer: function(){
@@ -182,6 +204,7 @@
 
         if (this.profileData.ticketOrder) {
           this.profileData.ticketOrder.store = this.profileData.ticketOrder.store.replace(/\n/g, '<br>');
+          this.profileData.ticketOrder.created = this.localizeDate(this.profileData.ticketOrder.created);
           orderTemplate += this.renderTemplate('order', {
             order: this.profileData.ticketOrder
           });
