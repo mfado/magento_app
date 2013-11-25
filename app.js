@@ -37,6 +37,13 @@
     },
 
     localizeDate: function(date, params) {
+      var dateObj = new Date(date);
+      // special fix for safari which does not know about ISO
+      if (dateObj.toString() == 'Invalid Date') {
+        var parts = date.split(' ');
+        var els = parts[0].split('-').concat(parts[1].split(':'));
+        dateObj = new Date(els[0], els[1], els[2], els[3], els[4], els[5]);
+      }
       var options = _.extend({
         year: "numeric",
         month: "numeric",
@@ -45,7 +52,7 @@
         minute: "2-digit",
         second: "2-digit"
       }, params || {});
-      return new Date(date).toLocaleDateString(this.locale, options);
+      return dateObj.toLocaleDateString(this.locale, options);
     },
 
     handleChanged:  _.debounce(function(e) {
