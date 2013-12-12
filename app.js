@@ -45,7 +45,7 @@
       if (dateObj.toString() == 'Invalid Date') {
         var parts = date.split(' ');
         var els = parts[0].split('-').concat(parts[1].split(':'));
-        dateObj = new Date(els[0], els[1], els[2], els[3], els[4], els[5]);
+        dateObj = new Date(els[0], els[1] - 1, els[2], els[3], els[4], els[5]);
       }
       var options = _.extend({
         year: "numeric",
