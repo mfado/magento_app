@@ -37,6 +37,9 @@
     },
 
     localizeDate: function(date, params) {
+      if (!date) {
+        return date;
+      }
       var dateObj = new Date(date);
       // special fix for safari which does not know about ISO
       if (dateObj.toString() == 'Invalid Date') {
