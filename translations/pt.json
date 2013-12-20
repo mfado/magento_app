@@ -9,7 +9,7 @@
         "label": "Token de acesso"
       },
       "order_id_field_id": {
-        "label": "ID do campo número do pedido"
+        "label": "ID do campo do número do pedido"
       }
     }
   },
