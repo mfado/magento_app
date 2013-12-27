@@ -44,7 +44,7 @@
     "created": "创建时间",
     "updated": "更新时间",
     "store": "商店",
-    "total": "全部",
+    "total": "共计",
     "error": {
       "message": "订单不存在",
       "no_address": "没有地址。"

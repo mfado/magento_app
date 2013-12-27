@@ -11,6 +11,10 @@ parts:
       title: "Displays customer and order details from Magento"
       value: "Displays customer and order details from Magento."
   - translation:
+      key: "txt.apps.magento.app.name"
+      title: "App name"
+      value: "Magento"
+  - translation:
       key: "txt.apps.magento.app.parameters.url.label"
       title: "Label for the Magento Store URL"
       value: "Store URL"
