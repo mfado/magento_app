@@ -2,6 +2,7 @@ title: "Magento App"
 packages:
   - default
   - app_magento
+  - classic
 
 parts:
 
