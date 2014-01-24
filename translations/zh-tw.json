@@ -1,6 +1,7 @@
 {
   "app": {
     "description": "顯示來自 Magento 的客戶和訂單詳情。",
+    "name": "Magento",
     "parameters": {
       "url": {
         "label": "商店 URL"

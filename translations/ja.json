@@ -1,6 +1,7 @@
 {
   "app": {
     "description": "Magentoからの顧客および注文の詳細を表示します。",
+    "name": "Magento",
     "parameters": {
       "url": {
         "label": "ストアのURL"

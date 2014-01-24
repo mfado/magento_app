@@ -1,54 +1,145 @@
 {
   "app": {
-    "description": "Displays customer and order details from Magento.",
-    "name": "Magento",
+    "description": {
+      "title": "Displays customer and order details from Magento",
+      "value": "Displays customer and order details from Magento."
+    },
+    "name": {
+      "title": "App name",
+      "value": "Magento"
+    },
     "parameters": {
       "url": {
-        "label": "Store URL"
+        "label": {
+          "title": "Label for the Magento Store URL",
+          "value": "Store URL"
+        }
       },
       "access_token": {
-        "label": "Access token"
+        "label": {
+          "title": "Label for the Magento Access token",
+          "value": "Access token"
+        }
       },
       "order_id_field_id": {
-        "label": "Order Number Field ID"
+        "label": {
+          "title": "Label for the Zendesk Order Number Field ID",
+          "value": "Order Number Field ID"
+        }
       }
-    }
+    },
+    "package": "magento"
   },
   "profile": {
-    "customer_since": "Customer Since",
-    "addresses": "Addresses",
-    "billing": "Billing",
-    "shipping": "Shipping",
-    "order": "Order",
-    "guest": "(Guest)"
+    "customer_since": {
+      "title": "When the customer first became a customer",
+      "value": "Customer Since"
+    },
+    "addresses": {
+      "title": "The addresses of the customer",
+      "value": "Addresses"
+    },
+    "billing": {
+      "title": "The billing address of the customer",
+      "value": "Billing"
+    },
+    "shipping": {
+      "title": "The shipping address of the customer",
+      "value": "Shipping"
+    },
+    "order": {
+      "title": "A title for the order section which displays details about the order",
+      "value": "Order"
+    },
+    "guest": {
+      "title": "If a customer if a guest of the store",
+      "value": "(Guest)"
+    }
   },
   "global": {
     "error": {
-      "title": "An error occurred",
-      "message": "Please try the previous action again.",
-      "server": "The request failed. Please ensure your configuration is correct and try again.",
-      "data": "Ticket data could not be read.",
-      "noprofile": "Customer does not exist."
+      "title": {
+        "title": "An error occurred",
+        "value": "An error occurred"
+      },
+      "message": {
+        "title": "Please try the previous action again",
+        "value": "Please try the previous action again."
+      },
+      "server": {
+        "title": "An error occurred while communicating with the Magento server",
+        "value": "The request failed. Please ensure your configuration is correct and try again."
+      },
+      "data": {
+        "title": "An error occurred while reading the ticket",
+        "value": "Ticket data could not be read."
+      },
+      "noprofile": {
+        "title": "Error message displayed when the customer doesn't exist",
+        "value": "Customer does not exist."
+      }
     },
-    "loading": "Waiting for ticket data to load...",
-    "requesting": "Requesting data from Magento..."
+    "loading": {
+      "title": "Details about the customer are loading",
+      "value": "Waiting for ticket data to load..."
+    },
+    "requesting": {
+      "title": "Data is being requested from Magento",
+      "value": "Requesting data from Magento..."
+    }
   },
   "orders": {
-    "id": "RECENT ORDERS",
-    "status": "STATUS"
+    "id": {
+      "title": "Recent orders the customer has completed",
+      "value": "RECENT ORDERS"
+    },
+    "status": {
+      "title": "The status of the recent orders",
+      "value": "STATUS"
+    }
   },
   "order": {
-    "details": "Order details for",
-    "status": "Status",
-    "currency": "Currency",
-    "items": "Items",
-    "created": "Created",
-    "updated": "Updated",
-    "store": "Store",
-    "total": "Total",
+    "details": {
+      "title": "Displaying the order details for",
+      "value": "Order details for"
+    },
+    "status": {
+      "title": "The current status of the order",
+      "value": "Status"
+    },
+    "currency": {
+      "title": "The currency of the order",
+      "value": "Currency"
+    },
+    "items": {
+      "title": "Items in the order",
+      "value": "Items"
+    },
+    "created": {
+      "title": "When the order was created",
+      "value": "Created"
+    },
+    "updated": {
+      "title": "When the order was updated",
+      "value": "Updated"
+    },
+    "store": {
+      "title": "Which store the order was placed through",
+      "value": "Store"
+    },
+    "total": {
+      "title": "The total amount of the order",
+      "value": "Total"
+    },
     "error": {
-      "message": "Order does not exist",
-      "no_address": "No address."
+      "message": {
+        "title": "Data is being requested from Magento",
+        "value": "Order does not exist"
+      },
+      "no_address": {
+        "title": "No address is present for that user",
+        "value": "No address."
+      }
     }
   }
 }

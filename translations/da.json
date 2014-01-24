@@ -1,6 +1,7 @@
 {
   "app": {
     "description": "Viser kunde- og ordredetaljer fra Magento.",
+    "name": "Magento",
     "parameters": {
       "url": {
         "label": "Forretnings-URL"
