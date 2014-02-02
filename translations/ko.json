@@ -1,6 +1,7 @@
 {
   "app": {
     "description": "Magento에서 고객 및 주문 정보를 표시합니다.",
+    "name": "Magento",
     "parameters": {
       "url": {
         "label": "스토어 URL"

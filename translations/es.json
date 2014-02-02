@@ -1,6 +1,7 @@
 {
   "app": {
     "description": "Muestra los detalles del cliente y del pedido de Magento.",
+    "name": "Magento",
     "parameters": {
       "url": {
         "label": "URL de la tienda"

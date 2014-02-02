@@ -1,53 +1,54 @@
 {
   "app": {
-    "description": "Displays customer and order details from Magento.",
+    "description": "Viser kunde- og bestillingsdetaljer fra Magento.",
+    "name": "Magento",
     "parameters": {
       "url": {
-        "label": "Store URL"
+        "label": "Butikk-URL"
       },
       "access_token": {
-        "label": "Access token"
+        "label": "Tilgangstoken"
       },
       "order_id_field_id": {
-        "label": "Order Number Field ID"
+        "label": "Felt-ID for bestillingsnummer"
       }
     }
   },
   "profile": {
-    "customer_since": "Customer Since",
-    "addresses": "Addresses",
-    "billing": "Billing",
-    "shipping": "Shipping",
-    "order": "Order",
-    "guest": "(Guest)"
+    "customer_since": "Kunde siden",
+    "addresses": "Adresser",
+    "billing": "Fakturering",
+    "shipping": "Forsendelse",
+    "order": "Bestilling",
+    "guest": "(Gjest)"
   },
   "global": {
     "error": {
-      "title": "An error occurred",
-      "message": "Please try the previous action again.",
-      "server": "The request failed. Please ensure your configuration is correct and try again.",
-      "data": "Ticket data could not be read.",
-      "noprofile": "Customer does not exist."
+      "title": "Det oppstod en feil",
+      "message": "Prøv forrige handling på nytt.",
+      "server": "Kan ikke etterkomme forespørselen. Sørg for at konfigurasjonen er riktig og prøv på nytt.",
+      "data": "Kan ikke lese saksdata.",
+      "noprofile": "Kunden finnes ikke."
     },
-    "loading": "Waiting for ticket data to load...",
-    "requesting": "Requesting data from Magento..."
+    "loading": "Venter på at saksdata skal laste...",
+    "requesting": "Ber om data fra Magento..."
   },
   "orders": {
-    "id": "RECENT ORDERS",
+    "id": "NYE BESTILLINGER",
     "status": "STATUS"
   },
   "order": {
-    "details": "Order details for",
+    "details": "Bestillingsopplysninger for",
     "status": "Status",
-    "currency": "Currency",
-    "items": "Items",
-    "created": "Created",
-    "updated": "Updated",
-    "store": "Store",
-    "total": "Total",
+    "currency": "Valuta",
+    "items": "Elementer",
+    "created": "Opprettet",
+    "updated": "Oppdatert",
+    "store": "Butikk",
+    "total": "Totalt",
     "error": {
-      "message": "Order does not exist",
-      "no_address": "No address."
+      "message": "Bestillingen finnes ikke",
+      "no_address": "Ingen adresse."
     }
   }
 }

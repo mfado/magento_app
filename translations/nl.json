@@ -1,6 +1,7 @@
 {
   "app": {
     "description": "Geeft info over klant en order van Magento weer.",
+    "name": "Magento",
     "parameters": {
       "url": {
         "label": "Webadres van winkel"

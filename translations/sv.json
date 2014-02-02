@@ -1,6 +1,7 @@
 {
   "app": {
     "description": "Visa kund och order information från Magento",
+    "name": "Magento",
     "parameters": {
       "url": {
         "label": "Store URL"

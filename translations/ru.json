@@ -1,6 +1,7 @@
 {
   "app": {
     "description": "Отображает данные клиентов и заказов от Magento.",
+    "name": "Magento",
     "parameters": {
       "url": {
         "label": "URL магазина"
