@@ -24,7 +24,7 @@ parts:
       value: "Access token"
   - translation:
       key: "txt.apps.magento.app.parameters.order_id_field_id.label"
-      title: "Label for the Zendesk Order Number Field ID"
+      title: "Label for the Zendesk Order ID Field ID"
       value: "Order ID Field ID"
   - translation:
       key: "txt.apps.magento.profile.customer_since"

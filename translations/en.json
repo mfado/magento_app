@@ -23,7 +23,7 @@
       },
       "order_id_field_id": {
         "label": {
-          "title": "Label for the Zendesk Order Number Field ID",
+          "title": "Label for the Zendesk Order ID Field ID",
           "value": "Order ID Field ID"
         }
       }
