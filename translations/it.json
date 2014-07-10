@@ -26,7 +26,7 @@
     "error": {
       "title": "Si è verificato un errore",
       "message": "Riprova l’azione precedente.",
-      "server": "Richiesta non riuscita. Verificate che la configurazione sia corretta e riprovate.",
+      "server": "Richiesta non riuscita. Verifica che la configurazione sia corretta e riprova.",
       "data": "Impossibile leggere i dati del ticket.",
       "noprofile": "Il cliente non esiste."
     },

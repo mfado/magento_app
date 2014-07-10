@@ -1,0 +1,54 @@
+{
+  "app": {
+    "description": "Näyttää asiakkaan ja tilauksen tiedot Magentosta.",
+    "name": "Magento",
+    "parameters": {
+      "url": {
+        "label": "Säilytä URL-osoite"
+      },
+      "access_token": {
+        "label": "Käyttöoikeustunnus"
+      },
+      "order_id_field_id": {
+        "label": "Tilausnumeron kenttätunnus"
+      }
+    }
+  },
+  "profile": {
+    "customer_since": "Asiakas alkaen",
+    "addresses": "Osoitteet",
+    "billing": "Laskutus",
+    "shipping": "Toimitus",
+    "order": "Tilaus",
+    "guest": "(Vieras)"
+  },
+  "global": {
+    "error": {
+      "title": "Esiintyi virhe",
+      "message": "Yritä edellistä toimintoa uudelleen.",
+      "server": "Pyyntö epäonnistui. Varmista, että määritykset ovat oikeat ja yritä uudelleen.",
+      "data": "Tiketin tietoja ei voitu lukea.",
+      "noprofile": "Asiakasta ei ole olemassa."
+    },
+    "loading": "Odottaa tiketin tietojen lataamista...",
+    "requesting": "Pyytää tietoja Magentosta..."
+  },
+  "orders": {
+    "id": "VIIMEISIMMÄT TILAUKSET",
+    "status": "TILA"
+  },
+  "order": {
+    "details": "Tilaustiedot kohteelle",
+    "status": "Tila",
+    "currency": "Valuutta",
+    "items": "Kohteet",
+    "created": "Luotu",
+    "updated": "Päivitetty",
+    "store": "Tallenna",
+    "total": "Yhteensä",
+    "error": {
+      "message": "Tilausta ei ole olemassa",
+      "no_address": "Ei osoitetta."
+    }
+  }
+}

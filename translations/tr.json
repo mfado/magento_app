@@ -1,54 +1,54 @@
 {
   "app": {
-    "description": "Displays customer and order details from Magento.",
+    "description": "Magento’dan müşteri ve sipariş detaylarını görüntüler.",
     "name": "Magento",
     "parameters": {
       "url": {
-        "label": "Store URL"
+        "label": "Mağaza URL"
       },
       "access_token": {
-        "label": "Access token"
+        "label": "Erişim belirteci"
       },
       "order_id_field_id": {
-        "label": "Order Number Field ID"
+        "label": "Sipariş Numarası Alan Kimliği"
       }
     }
   },
   "profile": {
-    "customer_since": "Customer Since",
-    "addresses": "Addresses",
-    "billing": "Billing",
-    "shipping": "Shipping",
-    "order": "Order",
-    "guest": "(Guest)"
+    "customer_since": "Şu Tarihten Bu Yana Müşteri",
+    "addresses": "Adresler",
+    "billing": "Faturalandırma",
+    "shipping": "Sevkiyat",
+    "order": "Sipariş",
+    "guest": "(Misafir)"
   },
   "global": {
     "error": {
-      "title": "An error occurred",
-      "message": "Please try the previous action again.",
-      "server": "The request failed. Please ensure your configuration is correct and try again.",
-      "data": "Ticket data could not be read.",
-      "noprofile": "Customer does not exist."
+      "title": "Bir hata oluştu",
+      "message": "Lütfen önceki eylemi tekrar deneyin.",
+      "server": "Talep başarısız oldu. Yapılandırmanızın doğruluğundan emin olun ve tekrar deneyin.",
+      "data": "Kayıt verileri okunamadı.",
+      "noprofile": "Müşteri mevcut değil."
     },
-    "loading": "Waiting for ticket data to load...",
-    "requesting": "Requesting data from Magento..."
+    "loading": "Kayıt verilerinin yüklenmesi bekleniyor...",
+    "requesting": "Magento’dan veriler isteniyor..."
   },
   "orders": {
-    "id": "RECENT ORDERS",
-    "status": "STATUS"
+    "id": "SON SİPARİŞLER",
+    "status": "DURUM"
   },
   "order": {
-    "details": "Order details for",
-    "status": "Status",
-    "currency": "Currency",
-    "items": "Items",
-    "created": "Created",
-    "updated": "Updated",
-    "store": "Store",
-    "total": "Total",
+    "details": "Sipariş detayları",
+    "status": "Durum",
+    "currency": "Para Birimi",
+    "items": "Öğeler",
+    "created": "Oluşturma tarihi",
+    "updated": "Güncellendi",
+    "store": "Mağaza",
+    "total": "Toplam",
     "error": {
-      "message": "Order does not exist",
-      "no_address": "No address."
+      "message": "Sipariş mevcut değil",
+      "no_address": "Adres yok."
     }
   }
 }

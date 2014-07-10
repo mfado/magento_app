@@ -1,0 +1,54 @@
+{
+  "app": {
+    "description": "Wyświetla szczegóły klienta i zamówienia z Magento.",
+    "name": "Magento",
+    "parameters": {
+      "url": {
+        "label": "Adres URL sklepu"
+      },
+      "access_token": {
+        "label": "Token dostępu"
+      },
+      "order_id_field_id": {
+        "label": "Identyfikator pola numeru zamówienia"
+      }
+    }
+  },
+  "profile": {
+    "customer_since": "Klient od",
+    "addresses": "Adresy",
+    "billing": "Adres do rozliczeń",
+    "shipping": "Adres wysyłki",
+    "order": "Zamówienie",
+    "guest": "(Gość)"
+  },
+  "global": {
+    "error": {
+      "title": "Wystąpił błąd",
+      "message": "Spróbuj ponowić poprzednią czynność.",
+      "server": "Żądanie nie powiodło się. Sprawdź, czy konfiguracja jest prawidłowa, i spróbuj ponownie.",
+      "data": "Nie można odczytać danych zgłoszenia.",
+      "noprofile": "Klient nie istnieje."
+    },
+    "loading": "Oczekiwanie na załadowanie danych zgłoszenia...",
+    "requesting": "Żądanie danych z Magento..."
+  },
+  "orders": {
+    "id": "OSTATNIE ZAMÓWIENIA",
+    "status": "STATUS"
+  },
+  "order": {
+    "details": "Szczegóły zamówienia dotyczące",
+    "status": "Status",
+    "currency": "Waluta",
+    "items": "Elementy",
+    "created": "Utworzono",
+    "updated": "Zaktualizowano",
+    "store": "Przechowaj",
+    "total": "Razem",
+    "error": {
+      "message": "Zamówienie nie istnieje",
+      "no_address": "Brak adresu."
+    }
+  }
+}

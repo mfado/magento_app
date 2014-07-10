@@ -10,7 +10,7 @@
         "label": "Access token"
       },
       "order_id_field_id": {
-        "label": "Order Number Field ID"
+        "label": "Order ID Field ID"
       }
     }
   },
