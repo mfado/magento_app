@@ -1,54 +1,54 @@
 {
   "app": {
-    "description": "Visa kund och order information från Magento",
+    "description": "Visar kund- och beställningsuppgifter från Magento.",
     "name": "Magento",
     "parameters": {
       "url": {
-        "label": "Store URL"
+        "label": "Butikens webbadress"
       },
       "access_token": {
-        "label": "Access token"
+        "label": "Åtkomsttoken"
       },
       "order_id_field_id": {
-        "label": "Order Number Field ID"
+        "label": "Fält-ID för ordernummer"
       }
     }
   },
   "profile": {
-    "customer_since": "Customer Since",
-    "addresses": "Addresses",
-    "billing": "Billing",
-    "shipping": "Shipping",
-    "order": "Order",
-    "guest": "(Guest)"
+    "customer_since": "Kund sedan",
+    "addresses": "Adresser",
+    "billing": "Fakturering",
+    "shipping": "Frakt",
+    "order": "Beställning",
+    "guest": "(Gäst)"
   },
   "global": {
     "error": {
-      "title": "An error occurred",
-      "message": "Please try the previous action again.",
-      "server": "The request failed. Please ensure your configuration is correct and try again.",
-      "data": "Ticket data could not be read.",
-      "noprofile": "Customer does not exist."
+      "title": "Ett fel inträffade",
+      "message": "Prova den föregående åtgärden igen.",
+      "server": "Förfrågan misslyckades. Se till att din konfiguration är korrekt och försök igen.",
+      "data": "Det gick inte att läsa ärendedata.",
+      "noprofile": "Kunden finns inte."
     },
-    "loading": "Waiting for ticket data to load...",
-    "requesting": "Requesting data from Magento..."
+    "loading": "Väntar på att ärendeuppgifter ska läsas in...",
+    "requesting": "Begär data från Magento..."
   },
   "orders": {
-    "id": "RECENT ORDERS",
+    "id": "SENASTE BESTÄLLNINGAR",
     "status": "STATUS"
   },
   "order": {
-    "details": "Order details for",
+    "details": "Beställningsuppgifter för",
     "status": "Status",
-    "currency": "Currency",
-    "items": "Items",
-    "created": "Created",
-    "updated": "Updated",
-    "store": "Store",
-    "total": "Total",
+    "currency": "Valuta",
+    "items": "Artiklar",
+    "created": "Skapad",
+    "updated": "Uppdaterad",
+    "store": "Butik",
+    "total": "Summa",
     "error": {
-      "message": "Order does not exist",
-      "no_address": "No address."
+      "message": "Beställningen finns inte",
+      "no_address": "Ingen adress"
     }
   }
 }

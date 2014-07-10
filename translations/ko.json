@@ -10,7 +10,7 @@
         "label": "액세스 토큰"
       },
       "order_id_field_id": {
-        "label": "주문 번호 필드 ID"
+        "label": "주문 번호 필드 아이디"
       }
     }
   },
