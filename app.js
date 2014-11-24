@@ -22,7 +22,7 @@
     },
 
     events: {
-      'app.activated'        : 'init',
+      'app.created'          : 'init',
       '*.changed'            : 'handleChanged',
       'getProfile.done'      : 'handleProfile',
       'getProfile.fail'      : 'handleProfileFail',
@@ -129,9 +129,6 @@
     },
 
     init: function(data){
-      if(!data.firstLoad){
-        return;
-      }
       this.ajax('userInfo').done(function() {
         this.magentoApiEndpoint = this._checkMagentoApiEndpoint(this.settings.url);
 
