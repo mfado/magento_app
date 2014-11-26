@@ -74,9 +74,9 @@
     handleProfile: function(data) {
       var ordersLength = 0;
 
-      // Check that the response was successfuly
-      if (_.has(data, 'success') && data.success === false)
-      {
+      // Check that the response was successful
+      if (_.has(data, 'success') && data.success === false) {
+        // Allow failures if there's an order to be fetched
         if (_.isEmpty(this.orderId) === false) {
           this.queryOrder();
         } else {
@@ -121,9 +121,13 @@
 
     handleProfileFail: function(resp) {
       if (resp.status === 404) {
-        this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.noprofile'));
-      }
-      else {
+        // Allow failures if there's an order to be fetched
+        if (_.isEmpty(this.orderId) === false) {
+          this.queryOrder();
+        } else {
+          this.showError(this.I18n.t('global.error.title'), this.I18n.t('global.error.noprofile'));
+        }
+      } else {
         this.handleFail();
       }
     },
