@@ -9,8 +9,8 @@
     magentoApiEndpoint: '',
 
     resources: {
-      PROFILE_URI       : '%@/index.php/zendesk/api/customers/%@',
-      ORDER_URI         : '%@/index.php/zendesk/api/orders/%@'
+      PROFILE_URI       : '%@/zendesk/api/customers/%@',
+      ORDER_URI         : '%@/zendesk/api/orders/%@'
     },
 
     requests: {
@@ -174,10 +174,8 @@
       // Test whether we have a front-controller reference here.
       if (url.indexOf('index.php') === -1)
       {
-        // Nothing to do, the front-controller isn't in the url, pass it back unaltered.
-        return url;
+        return url+'/index.php';
       }
-      url = url.replace(/\/index.php/g, '');
       return url;
     },
 
