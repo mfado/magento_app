@@ -26,6 +26,11 @@
       "name": "order_id_field_id",
       "type": "number",
       "required": false
-    }
+    },
+    {
+     "name": "store_code",
+     "type": "text",
+     "required": false   
+    }    
   ]
 }

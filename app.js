@@ -172,11 +172,10 @@
       // First, lets make sure there is no trailing slash, we'll add one later.
       if (url.slice(-1) === '/') { url = url.slice(0, -1); }
       // Test whether we have a front-controller reference here.
-      if (url.indexOf('index.php') === -1)
-      {
-        return url+'/index.php';
-      }
-      return url;
+      if (url.indexOf('index.php') === -1) { url=url+'/index.php'; }
+      // Add the store code if present
+      if (this.settings.store_code) { url=url+"/"+this.settings.store_code; }
+      return url;    
     },
 
     // Format the line breaks for web
